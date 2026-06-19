@@ -39,6 +39,21 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: background var(--ease-slow), color var(--ease-slow);
+}
+body[data-theme="light"] {
+  --bg: #F5F3EC;
+  --bg2: #FBF8F1;
+  --bg3: #F0EBDD;
+  --border: #DDD4B7;
+  --border-soft: #E8E0C8;
+  --text: #181714;
+  --text-muted: #5D5547;
+  --text-faint: #8A7F65;
+  --accent: #C4577A;
+  --accent-dark: #A84165;
+  --accent-glow: rgba(196,87,122,0.12);
+  --accent-faint: rgba(196,87,122,0.08);
 }
 a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; }
@@ -132,6 +147,33 @@ main { flex: 1; }
   display: flex;
   align-items: center;
   gap: 1.75rem;
+}
+.nav__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-left: auto;
+}
+.nav__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.45rem;
+  border-radius: 999px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition: background var(--ease), color var(--ease), border-color var(--ease);
+}
+.nav__toggle:hover {
+  background: var(--bg3);
+  color: var(--text);
+  border-color: var(--text-faint);
 }
 .nav__link {
   font-size: 0.78rem;
@@ -652,15 +694,29 @@ hr {
 .footer__links {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
 }
-.footer__link {
-  font-size: 0.78rem;
-  color: var(--text-faint);
-  transition: color var(--ease);
+.footer__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: background var(--ease), border-color var(--ease), color var(--ease), transform var(--ease);
 }
-.footer__link:hover { color: var(--accent); }
+.footer__icon:hover {
+  background: var(--accent-faint);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
 .footer__copy {
   font-size: 0.7rem;
   color: var(--text-faint);

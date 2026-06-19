@@ -18,14 +18,18 @@
 
 <nav class="nav" aria-label="Primary navigation">
   <div class="nav__inner">
-    <a href="index.html" class="nav__logo">Cectilia Thomspon<span>.</span></a>
+    <a href="index.html" class="nav__logo">Cecilia Thompson</a>
     <ul class="nav__links" id="nav-links" role="list">
-      <li><a href="index.html"     class="nav__link nav__link--active">Home</a></li>
-      <li><a href="about.html"    class="nav__link">About</a></li>
-      <li><a href="resume.html"   class="nav__link">Résumé</a></li>
-      <li><a href="projects.html" class="nav__link">Projects</a></li>
-      <li><a href="contact.html"  class="nav__link">Contact</a></li>
+      <li><a href="index.html" class="nav__link nav__link--active" data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
+      <li><a href="resume.html" class="nav__link" data-i18n="nav.resume">Résumé</a></li>
+      <li><a href="projects.html" class="nav__link" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
     </ul>
+    <div class="nav__controls">
+      <button class="nav__toggle" id="lang-toggle" aria-label="Switch language">PT</button>
+      <button class="nav__toggle nav__toggle--theme" id="theme-toggle" aria-label="Toggle theme">☀</button>
+    </div>
     <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
       <span></span><span></span><span></span>
     </button>
@@ -37,12 +41,12 @@
 
     <!-- HERO -->
     <section class="hero">
-      <h1>I build analytics that help teams make better decisions.</h1>
-      <p class="lead hero__lead">From Goiânia, Brazil to Williams Companies, my journey has been centered on turning data into clarity. With 5+ years of experience in data analysis and data visualization, I specialize in building dashboards, semantic models, data pipelines, and reporting frameworks that transform complex data into actionable business insights and support confident, data-driven decision-making.</p>
+      <h1 data-i18n="hero.title">I build analytics that help teams make better decisions.</h1>
+      <p class="lead hero__lead" data-i18n="hero.lead">From Goiânia, Brazil to Williams Companies, my journey has been centered on turning data into clarity. With 5+ years of experience in data analysis and data visualization, I specialize in building dashboards, semantic models, data pipelines, and reporting frameworks that transform complex data into actionable business insights and support confident, data-driven decision-making.</p>
       <div class="hero__actions">
-        <a href="projects.html" class="btn btn--primary">See my work</a>
-        <a href="resume.html"   class="btn btn--ghost">View résumé</a>
-        <a href="contact.html"  class="btn btn--ghost">Get in touch</a>
+        <a href="projects.html" class="btn btn--primary" data-i18n="btn.work">See my work</a>
+        <a href="resume.html" class="btn btn--ghost" data-i18n="btn.resume">View résumé</a>
+        <a href="contact.html" class="btn btn--ghost" data-i18n="btn.contact">Get in touch</a>
       </div>
     </section>
 
@@ -50,24 +54,24 @@
 
     <!-- WHAT I DO -->
     <section class="reveal">
-      <span class="eyebrow">What I do</span>
-      <h2>How I help teams work better</h2>
+      <span class="eyebrow" data-i18n="skills.eyebrow">What I do</span>
+      <h2 data-i18n="skills.title">How I help teams work better</h2>
       <div class="pillars" style="margin-top:1.5rem">
         <div class="pillar">
-          <div class="pillar__title">Data storytelling</div>
-          <div class="pillar__body">I translate complex data into dashboards and insights leaders can actually use to make decisions with confidence.</div>
+          <div class="pillar__title" data-i18n="skills.card1.title">Data storytelling</div>
+          <div class="pillar__body" data-i18n="skills.card1.body">I translate complex data into dashboards and insights leaders can actually use to make decisions with confidence.</div>
         </div>
         <div class="pillar">
-          <div class="pillar__title">Automation & efficiency</div>
-          <div class="pillar__body">I remove repetitive reporting work and build processes that save time, reduce risk, and improve consistency.</div>
+          <div class="pillar__title" data-i18n="skills.card2.title">Automation & efficiency</div>
+          <div class="pillar__body" data-i18n="skills.card2.body">I remove repetitive reporting work and build processes that save time, reduce risk, and improve consistency.</div>
         </div>
         <div class="pillar">
-          <div class="pillar__title">Data quality & trust</div>
-          <div class="pillar__body">I validate data, improve reporting reliability, and make sure the numbers behind the story are strong.</div>
+          <div class="pillar__title" data-i18n="skills.card3.title">Data quality & trust</div>
+          <div class="pillar__body" data-i18n="skills.card3.body">I validate data, improve reporting reliability, and make sure the numbers behind the story are strong.</div>
         </div>
         <div class="pillar">
-          <div class="pillar__title">Stakeholder partnership</div>
-          <div class="pillar__body">I work closely with business teams to turn questions into practical analytics solutions and clear recommendations.</div>
+          <div class="pillar__title" data-i18n="skills.card4.title">Stakeholder partnership</div>
+          <div class="pillar__body" data-i18n="skills.card4.body">I work closely with business teams to turn questions into practical analytics solutions and clear recommendations.</div>
         </div>
       </div>
     </section>
@@ -76,21 +80,21 @@
 
     <!-- SELECTED WORK -->
     <section class="reveal">
-      <span class="eyebrow">Selected work</span>
-      <h2>What I've built</h2>
-      <p class="section__sub">A few examples of how I turn analytics into business value.</p>
+      <span class="eyebrow" data-i18n="work.eyebrow">Selected work</span>
+      <h2 data-i18n="work.title">What I've built</h2>
+      <p class="section__sub" data-i18n="work.sub">A few examples of how I turn analytics into business value.</p>
 
       <div class="proj-list" style="margin-top:2rem">
 
         <a class="proj-item proj-item--link" href="projects.html#enterprise-it-dashboard-suite">
           <div class="proj-meta">
             <div class="proj-year">2025</div>
-            <div class="proj-cat">BI Platform</div>
+            <div class="proj-cat" data-i18n="work.card1.cat">BI Platform</div>
           </div>
           <div>
-            <div class="proj-title">Enterprise IT Dashboard Suite</div>
-            <div class="proj-kicker">Executive visibility across IT, operations, and finance</div>
-            <div class="proj-desc">Built Power BI dashboards and semantic models that gave leaders a trusted view of performance while reducing manual reporting work.</div>
+            <div class="proj-title" data-i18n="work.card1.title">Enterprise IT Dashboard Suite</div>
+            <div class="proj-kicker" data-i18n="work.card1.kicker">Executive visibility across IT, operations, and finance</div>
+            <div class="proj-desc" data-i18n="work.card1.desc">Built Power BI dashboards and semantic models that gave leaders a trusted view of performance while reducing manual reporting work.</div>
             <div class="proj-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Semantic Modeling</span></div>
           </div>
         </a>
@@ -98,12 +102,12 @@
         <a class="proj-item proj-item--link" href="projects.html#onboarding-framework">
           <div class="proj-meta">
             <div class="proj-year">2024</div>
-            <div class="proj-cat">HR Analytics</div>
+            <div class="proj-cat" data-i18n="work.card2.cat">HR Analytics</div>
           </div>
           <div>
-            <div class="proj-title">30/60/90-Day Onboarding Framework</div>
-            <div class="proj-kicker">People analytics for onboarding and retention</div>
-            <div class="proj-desc">Analyzed employee lifecycle data and helped shape a structured onboarding approach that improved engagement and informed HR decisions.</div>
+            <div class="proj-title" data-i18n="work.card2.title">30/60/90-Day Onboarding Framework</div>
+            <div class="proj-kicker" data-i18n="work.card2.kicker">People analytics for onboarding and retention</div>
+            <div class="proj-desc" data-i18n="work.card2.desc">Analyzed employee lifecycle data and helped shape a structured onboarding approach that improved engagement and informed HR decisions.</div>
             <div class="proj-tags"><span class="tag">People Analytics</span><span class="tag">DEI</span><span class="tag">Process Design</span></div>
           </div>
         </a>
@@ -119,9 +123,9 @@
 
     <!-- CTA -->
     <section class="reveal" style="padding-bottom:1rem">
-      <h2>Let's connect.</h2>
-      <p class="lead" style="margin:1rem 0 1.75rem">Whether you're exploring a role, a project, or a conversation about analytics and data strategy, I'm always happy to connect.</p>
-      <a href="contact.html" class="btn btn--primary">Get in touch</a>
+      <h2 data-i18n="cta.title">Let’s connect</h2>
+      <p class="lead" style="margin:1rem 0 1.75rem" data-i18n="cta.body">I’m always open to discussing opportunities, projects, or conversations around data, analytics, and business strategy.</p>
+      <a href="contact.html" class="btn btn--primary" data-i18n="cta.button">Get in touch</a>
     </section>
 
   </div>
@@ -130,21 +134,151 @@
 <footer class="footer" aria-label="Site footer">
   <div class="footer__inner">
     <div class="footer__left">
-      <div class="footer__name">Cecilia Thompson</div>
-      <div class="footer__tagline">Business Intelligence & Analytics · Tulsa, OK</div>
+      <div class="footer__name" data-i18n="footer.name">Cecilia Thomspon</div>
+      <div class="footer__tagline" data-i18n="footer.tagline">Business Intelligence & Analytics</div>
     </div>
     <div class="footer__links">
-      <a href="https://www.linkedin.com/in/cecilia-t-38b101208/" target="_blank" rel="noopener" class="footer__link">LinkedIn</a>
-      <a href="mailto:estefanea.thompson@gmail.com" class="footer__link">Email</a>
-      <a href="resume.html" class="footer__link">Résumé</a>
+      <a href="https://www.linkedin.com/in/cecilia-t-38b101208/" target="_blank" rel="noopener" class="footer__icon" aria-label="LinkedIn">
+        <span>in</span>
+      </a>
+      <a href="mailto:estefanea.thompson@gmail.com" class="footer__icon" aria-label="Email">
+        <span>@</span>
+      </a>
+      <a href="resume.html" class="footer__icon" aria-label="Résumé">
+        <span>↗</span>
+      </a>
     </div>
   </div>
-  <p class="footer__copy">© 2026 Cecilia Thompson. Views are my own.</p>
+  <p class="footer__copy" data-i18n="footer.copy">© 2026 Cecilia Thomspon. Views are my own.</p>
 </footer>
 
 <script>
 function toggleNav(btn){var links=document.getElementById("nav-links");var open=links.classList.toggle("nav__links--open");btn.setAttribute("aria-expanded",String(open));btn.setAttribute("aria-label",open?"Close menu":"Open menu");}
 (function(){if("IntersectionObserver" in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("reveal--visible");obs.unobserve(e.target);}});},{threshold:0.08,rootMargin:"0px 0px -24px 0px"});document.querySelectorAll(".reveal").forEach(function(el){obs.observe(el);});}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("reveal--visible");});}})();
+</script>
+<script>
+const translations = {
+  en: {
+    'nav.home': 'Home',
+    'nav.about': 'About',
+    'nav.resume': 'Résumé',
+    'nav.projects': 'Projects',
+    'nav.contact': 'Contact',
+    'hero.title': 'I build analytics that help teams make better decisions.',
+    'hero.lead': 'From Goiânia, Brazil to Williams Companies, my journey has been centered on turning data into clarity. With 5+ years of experience in data analysis and data visualization, I specialize in building dashboards, semantic models, data pipelines, and reporting frameworks that transform complex data into actionable business insights and support confident, data-driven decision-making.',
+    'btn.work': 'See my work',
+    'btn.resume': 'View résumé',
+    'btn.contact': 'Get in touch',
+    'skills.eyebrow': 'What I do',
+    'skills.title': 'How I help teams work better',
+    'skills.card1.title': 'Data storytelling',
+    'skills.card1.body': 'I translate complex data into dashboards and insights leaders can actually use to make decisions with confidence.',
+    'skills.card2.title': 'Automation & efficiency',
+    'skills.card2.body': 'I remove repetitive reporting work and build processes that save time, reduce risk, and improve consistency.',
+    'skills.card3.title': 'Data quality & trust',
+    'skills.card3.body': 'I validate data, improve reporting reliability, and make sure the numbers behind the story are strong.',
+    'skills.card4.title': 'Stakeholder partnership',
+    'skills.card4.body': 'I work closely with business teams to turn questions into practical analytics solutions and clear recommendations.',
+    'work.eyebrow': 'Selected work',
+    'work.title': "What I've built",
+    'work.sub': 'A few examples of how I turn analytics into business value.',
+    'work.card1.cat': 'BI Platform',
+    'work.card1.title': 'Enterprise IT Dashboard Suite',
+    'work.card1.kicker': 'Executive visibility across IT, operations, and finance',
+    'work.card1.desc': 'Built Power BI dashboards and semantic models that gave leaders a trusted view of performance while reducing manual reporting work.',
+    'work.card2.cat': 'HR Analytics',
+    'work.card2.title': '30/60/90-Day Onboarding Framework',
+    'work.card2.kicker': 'People analytics for onboarding and retention',
+    'work.card2.desc': 'Analyzed employee lifecycle data and helped shape a structured onboarding approach that improved engagement and informed HR decisions.',
+    'cta.title': 'Let’s connect',
+    'cta.body': 'I’m always open to discussing opportunities, projects, or conversations around data, analytics, and business strategy.',
+    'cta.button': 'Get in touch',
+    'footer.name': 'Cecilia Thomspon',
+    'footer.tagline': 'Business Intelligence & Analytics',
+    'footer.copy': '© 2026 Cecilia Thomspon. Views are my own.'
+  },
+  pt: {
+    'nav.home': 'Início',
+    'nav.about': 'Sobre',
+    'nav.resume': 'Currículo',
+    'nav.projects': 'Projetos',
+    'nav.contact': 'Contato',
+    'hero.title': 'Eu construo análises que ajudam equipes a tomar melhores decisões.',
+    'hero.lead': 'De Goiânia, Brasil até a Williams Companies, minha trajetória tem sido focada em transformar dados em clareza. Com mais de 5 anos de experiência em análise e visualização de dados, sou especializada em construir dashboards, modelos semânticos, pipelines de dados e estruturas de relatórios que transformam dados complexos em insights acionáveis e apoiam decisões confiantes baseadas em dados.',
+    'btn.work': 'Veja meu trabalho',
+    'btn.resume': 'Ver currículo',
+    'btn.contact': 'Entre em contato',
+    'skills.eyebrow': 'O que faço',
+    'skills.title': 'Como ajudo equipes a trabalhar melhor',
+    'skills.card1.title': 'Narrativa com dados',
+    'skills.card1.body': 'Traduzo dados complexos em dashboards e insights que líderes conseguem usar para tomar decisões com confiança.',
+    'skills.card2.title': 'Automação e eficiência',
+    'skills.card2.body': 'Elimino trabalho manual recorrente e construo processos que economizam tempo, reduzem riscos e melhoram a consistência.',
+    'skills.card3.title': 'Qualidade e confiança dos dados',
+    'skills.card3.body': 'Valido dados, aumento a confiabilidade dos relatórios e garanto que os números por trás da narrativa sejam sólidos.',
+    'skills.card4.title': 'Parceria com stakeholders',
+    'skills.card4.body': 'Trabalho em parceria com equipes de negócio para transformar perguntas em soluções analíticas práticas e recomendações claras.',
+    'work.eyebrow': 'Trabalho selecionado',
+    'work.title': 'O que eu construí',
+    'work.sub': 'Alguns exemplos de como transformo analytics em valor para o negócio.',
+    'work.card1.cat': 'Plataforma BI',
+    'work.card1.title': 'Enterprise IT Dashboard Suite',
+    'work.card1.kicker': 'Visibilidade executiva para TI, operações e finanças',
+    'work.card1.desc': 'Construí dashboards e modelos semânticos em Power BI que deram aos líderes uma visão confiável do desempenho e reduziram o trabalho manual de relatórios.',
+    'work.card2.cat': 'Analytics de RH',
+    'work.card2.title': 'Framework de 30/60/90 dias',
+    'work.card2.kicker': 'Analytics de pessoas para onboarding e retenção',
+    'work.card2.desc': 'Analisei dados do ciclo de vida dos colaboradores e ajudei a estruturar uma abordagem de onboarding que melhorou o engajamento e apoiou decisões de RH.',
+    'cta.title': 'Vamos conversar',
+    'cta.body': 'Estou sempre aberta a discutir oportunidades, projetos ou conversas sobre dados, analytics e estratégia de negócio.',
+    'cta.button': 'Entre em contato',
+    'footer.name': 'Cecilia Thomspon',
+    'footer.tagline': 'Business Intelligence & Analytics',
+    'footer.copy': '© 2026 Cecilia Thomspon. Todos os direitos reservados.'
+  }
+};
+
+const savedLang = localStorage.getItem('site-lang') || 'en';
+const savedTheme = localStorage.getItem('site-theme') || 'dark';
+
+function applyTranslation(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+  const langToggle = document.getElementById('lang-toggle');
+  if (langToggle) langToggle.textContent = lang === 'en' ? 'PT' : 'EN';
+}
+
+function applyTheme(theme) {
+  document.body.setAttribute('data-theme', theme);
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) themeToggle.textContent = theme === 'dark' ? '☀' : '☾';
+}
+
+function toggleLanguage() {
+  const current = document.documentElement.lang === 'pt' ? 'pt' : 'en';
+  const next = current === 'en' ? 'pt' : 'en';
+  localStorage.setItem('site-lang', next);
+  applyTranslation(next);
+}
+
+function toggleTheme() {
+  const current = document.body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  const next = current === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('site-theme', next);
+  applyTheme(next);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  applyTranslation(savedLang);
+  applyTheme(savedTheme);
+  document.getElementById('lang-toggle')?.addEventListener('click', toggleLanguage);
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+});
 </script>
 </body>
 </html>
