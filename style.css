@@ -387,19 +387,28 @@ hr {
 @media (max-width: 480px) { .pillars { grid-template-columns: 1fr; } }
 
 /* ── PROJECT CARDS ── */
-.proj-list { display: flex; flex-direction: column; }
+.proj-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 .proj-item {
   display: grid;
   grid-template-columns: 72px 1fr;
   gap: 1.5rem;
-  padding: 2rem 0;
-  border-bottom: 1px solid var(--border-soft);
-  transition: background var(--ease);
+  padding: 1.5rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: background var(--ease), border-color var(--ease), transform var(--ease);
   text-decoration: none;
   color: inherit;
-  cursor: default;
 }
-.proj-item:first-child { padding-top: 0; }
+.proj-item:hover {
+  background: var(--bg3);
+  border-color: var(--text-faint);
+  transform: translateY(-1px);
+}
 .proj-item--link { cursor: pointer; }
 .proj-item--link:hover .proj-title { color: var(--accent); }
 .proj-meta { padding-top: 3px; }
