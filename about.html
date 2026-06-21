@@ -1,68 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About · Cecilia Thompson</title>
   <meta name="description" content="The longer, more personal story — from Brazil to Fortune 500." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
+
 <nav class="nav" aria-label="Primary navigation">
   <div class="nav__inner">
-    <a href="index.html" class="nav__logo">Cecilia<span>.</span></a>
+    <a href="index.html" class="nav__logo">Cecilia Thompson</a>
     <ul class="nav__links" id="nav-links" role="list">
-      <li><a href="index.html"     class="nav__link">Home</a></li>
-      <li><a href="about.html"    class="nav__link nav__link--active">About</a></li>
-      <li><a href="resume.html"   class="nav__link">Résumé</a></li>
-      <li><a href="projects.html" class="nav__link">Projects</a></li>
-      <li><a href="contact.html"  class="nav__link">Contact</a></li>
+      <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html" class="nav__link nav__link--active" data-i18n="nav.about">About</a></li>
+      <li><a href="resume.html" class="nav__link" data-i18n="nav.resume">Résumé</a></li>
+      <li><a href="projects.html" class="nav__link" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
     </ul>
-    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)"><span></span><span></span><span></span></button>
+    <div class="nav__controls">
+      <button class="nav__toggle" id="lang-toggle" aria-label="Switch language">PT</button>
+      <button class="nav__toggle nav__toggle--theme" id="theme-toggle" aria-label="Toggle theme">☀</button>
+    </div>
+    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
 <main id="main">
   <div class="page">
 
-    <span class="eyebrow">About</span>
-    <h1>A bit about me.</h1>
+    <span class="eyebrow" data-i18n="about.eyebrow">About</span>
+    <h1 data-i18n="about.title">A bit about me.</h1>
 
     <div class="prose reveal" style="margin-top:2rem">
-      <p>In 2015 I arrived in the United States from <strong>Brazil</strong> with no English, no degree, and no roadmap. What I had was a work ethic built from necessity and a belief that hard things are worth doing.</p>
-      <p>I spent years learning the language while working, studying while building a life from scratch. In 2024 I graduated from <strong>Oklahoma State University</strong> with a B.S. in Management Information Systems — the first in my family. I'm not stopping there. My Master's in Business Analytics & Data Science is on track for <strong>December 2026.</strong></p>
-      <p>Today I work in IT Business Intelligence & Reporting at <strong>Williams Companies</strong>, a Fortune 500 energy infrastructure company. I build the Power BI dashboards and semantic data models that executives and operators depend on daily — translating sprawling enterprise data into clarity people can actually act on.</p>
-      <p>Before Williams, I interned in HR Analytics at CBIZ, designing onboarding frameworks and workforce analytics. Before America, I spent four years as a Business Analyst at Sintese Comercial Hospitalar in Goiânia — managing $300K+ in monthly receivables and automating finance reporting long before "automation" became a buzzword.</p>
-      <p>The hardship didn't define me. <strong>The choices I made because of it did.</strong></p>
+      <p data-i18n="about.p1">In 2015 I arrived in the United States from <strong>Brazil</strong> with no English, no degree, and no roadmap. What I had was a work ethic built from necessity and a belief that hard things are worth doing.</p>
+      <p data-i18n="about.p2">I spent years learning the language while working, studying while building a life from scratch. In 2024 I graduated from <strong>Oklahoma State University</strong> with a B.S. in Management Information Systems — the first in my family. I'm not stopping there. My Master's in Business Analytics & Data Science is on track for <strong>December 2026.</strong></p>
+      <p data-i18n="about.p3">Today I work in IT Business Intelligence & Reporting at <strong>Williams Companies</strong>, a Fortune 500 energy infrastructure company. I build the Power BI dashboards and semantic data models that executives and operators depend on daily — translating sprawling enterprise data into clarity people can actually act on.</p>
+      <p data-i18n="about.p4">Before Williams, I interned in HR Analytics at CBIZ, designing onboarding frameworks and workforce analytics. Before America, I spent four years as a Business Analyst at Sintese Comercial Hospitalar in Goiânia — managing $300K+ in monthly receivables and automating finance reporting long before "automation" became a buzzword.</p>
+      <p data-i18n="about.p5">The hardship didn't define me. <strong>The choices I made because of it did.</strong></p>
     </div>
 
     <hr/>
 
     <section class="reveal">
-      <span class="eyebrow">What drives me</span>
-      <h2>Where I'm at my best.</h2>
+      <span class="eyebrow" data-i18n="about.drives.eyebrow">What drives me</span>
+      <h2 data-i18n="about.drives.title">Where I'm at my best.</h2>
       <div class="pillars" style="margin-top:1.5rem">
         <div class="pillar">
           <div class="pillar__icon">📊</div>
-          <div class="pillar__title">Data storytelling</div>
-          <div class="pillar__body">I translate complex datasets into dashboards executives actually use — not just technically correct, but genuinely actionable.</div>
+          <div class="pillar__title" data-i18n="about.pillar1.title">Data storytelling</div>
+          <div class="pillar__body" data-i18n="about.pillar1.body">I translate complex datasets into dashboards executives actually use — not just technically correct, but genuinely actionable.</div>
         </div>
         <div class="pillar">
           <div class="pillar__icon">⚙️</div>
-          <div class="pillar__title">Automation first</div>
-          <div class="pillar__body">I find the manual work and replace it. 100+ hours of monthly reporting labor eliminated at Williams alone.</div>
+          <div class="pillar__title" data-i18n="about.pillar2.title">Automation first</div>
+          <div class="pillar__body" data-i18n="about.pillar2.body">I find the manual work and replace it. 100+ hours of monthly reporting labor eliminated at Williams alone.</div>
         </div>
         <div class="pillar">
           <div class="pillar__icon">🌎</div>
-          <div class="pillar__title">Bilingual bridge</div>
-          <div class="pillar__body">Native Portuguese, fluent English. I translate between technical teams and business stakeholders — literally and figuratively.</div>
+          <div class="pillar__title" data-i18n="about.pillar3.title">Bilingual bridge</div>
+          <div class="pillar__body" data-i18n="about.pillar3.body">Native Portuguese, fluent English. I translate between technical teams and business stakeholders — literally and figuratively.</div>
         </div>
         <div class="pillar">
           <div class="pillar__icon">🎓</div>
-          <div class="pillar__title">Always learning</div>
-          <div class="pillar__body">MS incoming Dec 2026. I use AI tools daily and share what works with my team.</div>
+          <div class="pillar__title" data-i18n="about.pillar4.title">Always learning</div>
+          <div class="pillar__body" data-i18n="about.pillar4.body">MS incoming Dec 2026. I use AI tools daily and share what works with my team.</div>
         </div>
       </div>
     </section>
@@ -70,21 +79,21 @@
     <hr/>
 
     <section class="reveal">
-      <span class="eyebrow">Education</span>
-      <h2>Oklahoma State University.</h2>
-      <p class="section__sub">Both degrees earned — and being earned — in Stillwater, OK.</p>
+      <span class="eyebrow" data-i18n="about.edu.eyebrow">Education</span>
+      <h2 data-i18n="about.edu.title">Oklahoma State University.</h2>
+      <p class="section__sub" data-i18n="about.edu.sub">Both degrees earned — and being earned — in Stillwater, OK.</p>
       <div class="edu-grid" style="margin-top:1.5rem">
         <div class="edu-card edu-card--active">
-          <div class="edu-deg">M.S. Business Analytics & Data Science</div>
-          <div class="edu-school">Oklahoma State University</div>
-          <div class="edu-meta">Stillwater, OK · Spears School of Business</div>
-          <span class="edu-status edu-status--active">In progress · Dec 2026</span>
+          <div class="edu-deg" data-i18n="about.edu.ms.deg">M.S. Business Analytics & Data Science</div>
+          <div class="edu-school" data-i18n="about.edu.ms.school">Oklahoma State University</div>
+          <div class="edu-meta" data-i18n="about.edu.ms.meta">Stillwater, OK · Spears School of Business</div>
+          <span class="edu-status edu-status--active" data-i18n="about.edu.ms.status">In progress · Dec 2026</span>
         </div>
         <div class="edu-card">
-          <div class="edu-deg">B.S. Management Information Systems</div>
-          <div class="edu-school">Oklahoma State University</div>
-          <div class="edu-meta">Stillwater, OK · 2020 – 2024</div>
-          <span class="edu-status edu-status--done">Completed · 2024</span>
+          <div class="edu-deg" data-i18n="about.edu.bs.deg">B.S. Management Information Systems</div>
+          <div class="edu-school" data-i18n="about.edu.bs.school">Oklahoma State University</div>
+          <div class="edu-meta" data-i18n="about.edu.bs.meta">Stillwater, OK · 2020 – 2024</div>
+          <span class="edu-status edu-status--done" data-i18n="about.edu.bs.status">Completed · 2024</span>
         </div>
       </div>
     </section>
@@ -92,17 +101,180 @@
     <hr/>
 
     <section class="reveal" style="padding-bottom:1rem">
-      <p class="lead">Want to see where I've worked or what I've built?</p>
+      <p class="lead" data-i18n="about.cta.lead">Want to see where I've worked or what I've built?</p>
       <div style="display:flex;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap">
-        <a href="resume.html"   class="btn btn--primary">View résumé</a>
-        <a href="projects.html" class="btn btn--ghost">See projects</a>
-        <a href="contact.html"  class="btn btn--ghost">Get in touch</a>
+        <a href="resume.html" class="btn btn--primary" data-i18n="about.cta.resume">View résumé</a>
+        <a href="projects.html" class="btn btn--ghost" data-i18n="about.cta.projects">See projects</a>
+        <a href="contact.html" class="btn btn--ghost" data-i18n="about.cta.contact">Get in touch</a>
       </div>
     </section>
 
   </div>
 </main>
 
-<footer class="footer"><div class="footer__inner"><div class="footer__left"><div class="footer__name">Cecilia Thompson</div><div class="footer__tagline">Business Intelligence & Analytics · Tulsa, OK</div></div><div class="footer__links"><a href="https://www.linkedin.com/in/cecilia-t-38b101208/" target="_blank" rel="noopener" class="footer__link">LinkedIn</a><a href="mailto:estefanea.thompson@gmail.com" class="footer__link">Email</a><a href="resume.html" class="footer__link">Résumé</a></div></div><p class="footer__copy">© 2026 Cecilia Thompson. Views are my own.</p></footer>
-<script>function toggleNav(btn){var links=document.getElementById("nav-links");var open=links.classList.toggle("nav__links--open");btn.setAttribute("aria-expanded",String(open));btn.setAttribute("aria-label",open?"Close menu":"Open menu");}(function(){if("IntersectionObserver" in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("reveal--visible");obs.unobserve(e.target);}});},{threshold:0.08,rootMargin:"0px 0px -24px 0px"});document.querySelectorAll(".reveal").forEach(function(el){obs.observe(el);});}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("reveal--visible");});}})();</script>
-</body></html>
+<footer class="footer" aria-label="Site footer">
+  <div class="footer__inner">
+    <div class="footer__left">
+      <div class="footer__name" data-i18n="footer.name">Cecilia Thompson</div>
+      <div class="footer__tagline" data-i18n="footer.tagline">Business Intelligence & Analytics</div>
+    </div>
+    <div class="footer__links">
+      <a href="https://www.linkedin.com/in/cecilia-t-38b101208/" target="_blank" rel="noopener" class="footer__icon" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.4 9.1h2.3V18H6.4V9.1Zm1.15-1.95a1.33 1.33 0 1 1 0-2.66 1.33 1.33 0 0 1 0 2.66ZM10.8 9.1h2.2v1.18h.03c.3-.58 1.04-1.18 2.15-1.18 2.3 0 2.74 1.5 2.74 3.46V18h-2.3v-7.15c0-1.7-.03-3.88-2.35-3.88-2.36 0-2.72 1.84-2.72 3.74V18h-2.3V9.1Z"/>
+        </svg>
+      </a>
+      <a href="mailto:estefanea.thompson@gmail.com" class="footer__icon" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4.5 7.5h15a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Z"/>
+          <path d="m4.5 7.5 7.5 5 7.5-5"/>
+        </svg>
+      </a>
+      <a href="resume.html" class="footer__icon" aria-label="Résumé">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7.5 3.5h7l4.5 4.5V20a1.5 1.5 0 0 1-1.5 1.5H7.5A1.5 1.5 0 0 1 6 20V5A1.5 1.5 0 0 1 7.5 3.5Z"/>
+          <path d="M14.5 3.5v5h5"/>
+          <path d="M9.5 12.5h5M9.5 16h5M9.5 19.5h3.5"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <p class="footer__copy" data-i18n="footer.copy">© 2026 Cecilia Thompson. Views are my own.</p>
+</footer>
+
+<script>
+function toggleNav(btn){var links=document.getElementById("nav-links");var open=links.classList.toggle("nav__links--open");btn.setAttribute("aria-expanded",String(open));btn.setAttribute("aria-label",open?"Close menu":"Open menu");}
+(function(){if("IntersectionObserver" in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("reveal--visible");obs.unobserve(e.target);}});},{threshold:0.08,rootMargin:"0px 0px -24px 0px"});document.querySelectorAll(".reveal").forEach(function(el){obs.observe(el);});}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("reveal--visible");});}})();
+</script>
+<script>
+const translations = {
+  en: {
+    'nav.home': 'Home',
+    'nav.about': 'About',
+    'nav.resume': 'Résumé',
+    'nav.projects': 'Projects',
+    'nav.contact': 'Contact',
+    'about.eyebrow': 'About',
+    'about.title': 'A bit about me.',
+    'about.p1': 'In 2015 I arrived in the United States from Brazil with no English, no degree, and no roadmap. What I had was a work ethic built from necessity and a belief that hard things are worth doing.',
+    'about.p2': 'I spent years learning the language while working, studying while building a life from scratch. In 2024 I graduated from Oklahoma State University with a B.S. in Management Information Systems — the first in my family. I\'m not stopping there. My Master\'s in Business Analytics & Data Science is on track for December 2026.',
+    'about.p3': 'Today I work in IT Business Intelligence & Reporting at Williams Companies, a Fortune 500 energy infrastructure company. I build the Power BI dashboards and semantic data models that executives and operators depend on daily — translating sprawling enterprise data into clarity people can actually act on.',
+    'about.p4': 'Before Williams, I interned in HR Analytics at CBIZ, designing onboarding frameworks and workforce analytics. Before America, I spent four years as a Business Analyst at Sintese Comercial Hospitalar in Goiânia — managing $300K+ in monthly receivables and automating finance reporting long before "automation" became a buzzword.',
+    'about.p5': 'The hardship didn\'t define me. The choices I made because of it did.',
+    'about.drives.eyebrow': 'What drives me',
+    'about.drives.title': 'Where I\'m at my best.',
+    'about.pillar1.title': 'Data storytelling',
+    'about.pillar1.body': 'I translate complex datasets into dashboards executives actually use — not just technically correct, but genuinely actionable.',
+    'about.pillar2.title': 'Automation first',
+    'about.pillar2.body': 'I find the manual work and replace it. 100+ hours of monthly reporting labor eliminated at Williams alone.',
+    'about.pillar3.title': 'Bilingual bridge',
+    'about.pillar3.body': 'Native Portuguese, fluent English. I translate between technical teams and business stakeholders — literally and figuratively.',
+    'about.pillar4.title': 'Always learning',
+    'about.pillar4.body': 'MS incoming Dec 2026. I use AI tools daily and share what works with my team.',
+    'about.edu.eyebrow': 'Education',
+    'about.edu.title': 'Oklahoma State University.',
+    'about.edu.sub': 'Both degrees earned — and being earned — in Stillwater, OK.',
+    'about.edu.ms.deg': 'M.S. Business Analytics & Data Science',
+    'about.edu.ms.school': 'Oklahoma State University',
+    'about.edu.ms.meta': 'Stillwater, OK · Spears School of Business',
+    'about.edu.ms.status': 'In progress · Dec 2026',
+    'about.edu.bs.deg': 'B.S. Management Information Systems',
+    'about.edu.bs.school': 'Oklahoma State University',
+    'about.edu.bs.meta': 'Stillwater, OK · 2020 – 2024',
+    'about.edu.bs.status': 'Completed · 2024',
+    'about.cta.lead': 'Want to see where I\'ve worked or what I\'ve built?',
+    'about.cta.resume': 'View résumé',
+    'about.cta.projects': 'See projects',
+    'about.cta.contact': 'Get in touch',
+    'footer.name': 'Cecilia Thompson',
+    'footer.tagline': 'Business Intelligence & Analytics',
+    'footer.copy': '© 2026 Cecilia Thompson. Views are my own.'
+  },
+  pt: {
+    'nav.home': 'Início',
+    'nav.about': 'Sobre',
+    'nav.resume': 'Currículo',
+    'nav.projects': 'Projetos',
+    'nav.contact': 'Contato',
+    'about.eyebrow': 'Sobre',
+    'about.title': 'Um pouco sobre mim.',
+    'about.p1': 'Em 2015, cheguei aos Estados Unidos vinda do Brasil, sem falar inglês, sem diploma e sem roteiro. O que eu tinha era uma ética de trabalho construída pela necessidade e a crença de que coisas difíceis valem a pena.',
+    'about.p2': 'Passei anos aprendendo o idioma enquanto trabalhava, estudando enquanto construía uma vida do zero. Em 2024, me formei na Oklahoma State University com bacharelado em Sistemas de Informação Gerencial — a primeira da minha família. E não vou parar por aí. Meu mestrado em Business Analytics & Data Science está previsto para dezembro de 2026.',
+    'about.p3': 'Hoje trabalho em Business Intelligence & Reporting de TI na Williams Companies, uma empresa Fortune 500 de infraestrutura energética. Construo os dashboards em Power BI e modelos semânticos de dados que executivos e operadores usam diariamente — traduzindo dados empresariais complexos em clareza que as pessoas podem realmente usar.',
+    'about.p4': 'Antes da Williams, fiz estágio em HR Analytics na CBIZ, projetando frameworks de onboarding e analytics de força de trabalho. Antes dos EUA, passei quatro anos como Analista de Negócios na Síntese Comercial Hospitalar em Goiânia — gerenciando mais de R$1,5M em recebíveis mensais e automatizando relatórios financeiros muito antes de "automação" virar tendência.',
+    'about.p5': 'As dificuldades não me definiram. As escolhas que fiz por causa delas, sim.',
+    'about.drives.eyebrow': 'O que me motiva',
+    'about.drives.title': 'Onde sou melhor.',
+    'about.pillar1.title': 'Narrativa com dados',
+    'about.pillar1.body': 'Traduzo datasets complexos em dashboards que executivos realmente usam — não apenas tecnicamente corretos, mas genuinamente acionáveis.',
+    'about.pillar2.title': 'Automação primeiro',
+    'about.pillar2.body': 'Encontro o trabalho manual e o substituo. Mais de 100 horas de trabalho mensal de relatórios eliminadas só na Williams.',
+    'about.pillar3.title': 'Ponte bilíngue',
+    'about.pillar3.body': 'Português nativo, inglês fluente. Traduzo entre equipes técnicas e stakeholders de negócio — literal e figurativamente.',
+    'about.pillar4.title': 'Sempre aprendendo',
+    'about.pillar4.body': 'Mestrado previsto para dez/2026. Uso ferramentas de IA diariamente e compartilho o que funciona com minha equipe.',
+    'about.edu.eyebrow': 'Educação',
+    'about.edu.title': 'Oklahoma State University.',
+    'about.edu.sub': 'Ambos os diplomas conquistados — e sendo conquistados — em Stillwater, OK.',
+    'about.edu.ms.deg': 'M.S. Business Analytics & Data Science',
+    'about.edu.ms.school': 'Oklahoma State University',
+    'about.edu.ms.meta': 'Stillwater, OK · Spears School of Business',
+    'about.edu.ms.status': 'Em andamento · Dez 2026',
+    'about.edu.bs.deg': 'B.S. Management Information Systems',
+    'about.edu.bs.school': 'Oklahoma State University',
+    'about.edu.bs.meta': 'Stillwater, OK · 2020 – 2024',
+    'about.edu.bs.status': 'Concluído · 2024',
+    'about.cta.lead': 'Quer ver onde trabalhei ou o que construí?',
+    'about.cta.resume': 'Ver currículo',
+    'about.cta.projects': 'Ver projetos',
+    'about.cta.contact': 'Entre em contato',
+    'footer.name': 'Cecilia Thompson',
+    'footer.tagline': 'Business Intelligence & Analytics',
+    'footer.copy': '© 2026 Cecilia Thompson. Todos os direitos reservados.'
+  }
+};
+
+const savedLang = localStorage.getItem('site-lang') || 'en';
+const savedTheme = localStorage.getItem('site-theme') || 'dark';
+
+function applyTranslation(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+  const langToggle = document.getElementById('lang-toggle');
+  if (langToggle) langToggle.textContent = lang === 'en' ? 'PT' : 'EN';
+}
+
+function applyTheme(theme) {
+  document.body.setAttribute('data-theme', theme);
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) themeToggle.textContent = theme === 'dark' ? '☀' : '☾';
+}
+
+function toggleLanguage() {
+  const current = document.documentElement.lang === 'pt' ? 'pt' : 'en';
+  const next = current === 'en' ? 'pt' : 'en';
+  localStorage.setItem('site-lang', next);
+  applyTranslation(next);
+}
+
+function toggleTheme() {
+  const current = document.body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  const next = current === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('site-theme', next);
+  applyTheme(next);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  applyTranslation(savedLang);
+  applyTheme(savedTheme);
+  document.getElementById('lang-toggle')?.addEventListener('click', toggleLanguage);
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+});
+</script>
+</body>
+</html>

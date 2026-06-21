@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact · Cecilia Thompson</title>
   <meta name="description" content="Get in touch with Cecilia Thompson." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
+
 <nav class="nav" aria-label="Primary navigation">
   <div class="nav__inner">
-    <a href="index.html" class="nav__logo">Cecilia<span>.</span></a>
+    <a href="index.html" class="nav__logo">Cecilia Thompson</a>
     <ul class="nav__links" id="nav-links" role="list">
-      <li><a href="index.html"     class="nav__link">Home</a></li>
-      <li><a href="about.html"    class="nav__link">About</a></li>
-      <li><a href="resume.html"   class="nav__link">Résumé</a></li>
-      <li><a href="projects.html" class="nav__link">Projects</a></li>
-      <li><a href="contact.html"  class="nav__link nav__link--active">Contact</a></li>
+      <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
+      <li><a href="resume.html" class="nav__link" data-i18n="nav.resume">Résumé</a></li>
+      <li><a href="projects.html" class="nav__link" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="contact.html" class="nav__link nav__link--active" data-i18n="nav.contact">Contact</a></li>
     </ul>
-    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)"><span></span><span></span><span></span></button>
+    <div class="nav__controls">
+      <button class="nav__toggle" id="lang-toggle" aria-label="Switch language">PT</button>
+      <button class="nav__toggle nav__toggle--theme" id="theme-toggle" aria-label="Toggle theme">☀</button>
+    </div>
+    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
 <main id="main">
   <div class="page">
 
-    <span class="eyebrow">Say hello</span>
-    <h1>Get in touch.</h1>
-    <p class="lead" style="margin-top:1rem;margin-bottom:2.5rem">A role, a collaboration, or just a conversation about data — all welcome. Email reaches me fastest. I read everything and respond to everyone.</p>
+    <span class="eyebrow" data-i18n="contact.eyebrow">Say hello</span>
+    <h1 data-i18n="contact.title">Get in touch.</h1>
+    <p class="lead" style="margin-top:1rem;margin-bottom:2.5rem" data-i18n="contact.lead">A role, a collaboration, or just a conversation about data — all welcome. Email reaches me fastest. I read everything and respond to everyone.</p>
 
     <div class="contact-links reveal">
       <a href="mailto:estefanea.thompson@gmail.com" class="contact-link">
         <div class="cl-icon">✉️</div>
         <div>
-          <div class="cl-label">Email</div>
+          <div class="cl-label" data-i18n="contact.email.label">Email</div>
           <div class="cl-value">estefanea.thompson@gmail.com</div>
         </div>
       </a>
@@ -49,15 +58,15 @@
       <a href="tel:9189019697" class="contact-link">
         <div class="cl-icon">📞</div>
         <div>
-          <div class="cl-label">Phone</div>
+          <div class="cl-label" data-i18n="contact.phone.label">Phone</div>
           <div class="cl-value">(918) 901-9697</div>
         </div>
       </a>
       <a href="assets/resume.pdf" target="_blank" rel="noopener" class="contact-link">
         <div class="cl-icon">📄</div>
         <div>
-          <div class="cl-label">Résumé</div>
-          <div class="cl-value">Download PDF</div>
+          <div class="cl-label" data-i18n="contact.resume.label">Résumé</div>
+          <div class="cl-value" data-i18n="contact.resume.value">Download PDF</div>
         </div>
       </a>
     </div>
@@ -65,12 +74,127 @@
     <hr/>
 
     <section class="reveal" style="padding-bottom:1rem">
-      <p style="font-size:.88rem;color:var(--text-faint);line-height:1.7">Based in <span style="color:var(--text-muted)">Tulsa, Oklahoma.</span> Open to remote and hybrid opportunities in BI, analytics, and data roles.</p>
+      <p style="font-size:.88rem;color:var(--text-faint);line-height:1.7" data-i18n="contact.location">Based in Tulsa, Oklahoma. Open to remote and hybrid opportunities in BI, analytics, and data roles.</p>
     </section>
 
   </div>
 </main>
 
-<footer class="footer"><div class="footer__inner"><div class="footer__left"><div class="footer__name">Cecilia Thompson</div><div class="footer__tagline">Business Intelligence & Analytics · Tulsa, OK</div></div><div class="footer__links"><a href="https://www.linkedin.com/in/cecilia-t-38b101208/" target="_blank" rel="noopener" class="footer__link">LinkedIn</a><a href="mailto:estefanea.thompson@gmail.com" class="footer__link">Email</a><a href="resume.html" class="footer__link">Résumé</a></div></div><p class="footer__copy">© 2026 Cecilia Thompson. Views are my own.</p></footer>
-<script>function toggleNav(btn){var links=document.getElementById("nav-links");var open=links.classList.toggle("nav__links--open");btn.setAttribute("aria-expanded",String(open));btn.setAttribute("aria-label",open?"Close menu":"Open menu");}(function(){if("IntersectionObserver" in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("reveal--visible");obs.unobserve(e.target);}});},{threshold:0.08,rootMargin:"0px 0px -24px 0px"});document.querySelectorAll(".reveal").forEach(function(el){obs.observe(el);});}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("reveal--visible");});}})();</script>
-</body></html>
+<footer class="footer" aria-label="Site footer">
+  <div class="footer__inner">
+    <div class="footer__left">
+      <div class="footer__name" data-i18n="footer.name">Cecilia Thompson</div>
+      <div class="footer__tagline" data-i18n="footer.tagline">Business Intelligence & Analytics</div>
+    </div>
+    <div class="footer__links">
+      <a href="https://www.linkedin.com/in/cecilia-t-38b101208/" target="_blank" rel="noopener" class="footer__icon" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.4 9.1h2.3V18H6.4V9.1Zm1.15-1.95a1.33 1.33 0 1 1 0-2.66 1.33 1.33 0 0 1 0 2.66ZM10.8 9.1h2.2v1.18h.03c.3-.58 1.04-1.18 2.15-1.18 2.3 0 2.74 1.5 2.74 3.46V18h-2.3v-7.15c0-1.7-.03-3.88-2.35-3.88-2.36 0-2.72 1.84-2.72 3.74V18h-2.3V9.1Z"/>
+        </svg>
+      </a>
+      <a href="mailto:estefanea.thompson@gmail.com" class="footer__icon" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4.5 7.5h15a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Z"/>
+          <path d="m4.5 7.5 7.5 5 7.5-5"/>
+        </svg>
+      </a>
+      <a href="resume.html" class="footer__icon" aria-label="Résumé">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7.5 3.5h7l4.5 4.5V20a1.5 1.5 0 0 1-1.5 1.5H7.5A1.5 1.5 0 0 1 6 20V5A1.5 1.5 0 0 1 7.5 3.5Z"/>
+          <path d="M14.5 3.5v5h5"/>
+          <path d="M9.5 12.5h5M9.5 16h5M9.5 19.5h3.5"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <p class="footer__copy" data-i18n="footer.copy">© 2026 Cecilia Thompson. Views are my own.</p>
+</footer>
+
+<script>
+function toggleNav(btn){var links=document.getElementById("nav-links");var open=links.classList.toggle("nav__links--open");btn.setAttribute("aria-expanded",String(open));btn.setAttribute("aria-label",open?"Close menu":"Open menu");}
+(function(){if("IntersectionObserver" in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("reveal--visible");obs.unobserve(e.target);}});},{threshold:0.08,rootMargin:"0px 0px -24px 0px"});document.querySelectorAll(".reveal").forEach(function(el){obs.observe(el);});}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("reveal--visible");});}})();
+</script>
+<script>
+const translations = {
+  en: {
+    'nav.home': 'Home',
+    'nav.about': 'About',
+    'nav.resume': 'Résumé',
+    'nav.projects': 'Projects',
+    'nav.contact': 'Contact',
+    'contact.eyebrow': 'Say hello',
+    'contact.title': 'Get in touch.',
+    'contact.lead': 'A role, a collaboration, or just a conversation about data — all welcome. Email reaches me fastest. I read everything and respond to everyone.',
+    'contact.email.label': 'Email',
+    'contact.phone.label': 'Phone',
+    'contact.resume.label': 'Résumé',
+    'contact.resume.value': 'Download PDF',
+    'contact.location': 'Based in Tulsa, Oklahoma. Open to remote and hybrid opportunities in BI, analytics, and data roles.',
+    'footer.name': 'Cecilia Thompson',
+    'footer.tagline': 'Business Intelligence & Analytics',
+    'footer.copy': '© 2026 Cecilia Thompson. Views are my own.'
+  },
+  pt: {
+    'nav.home': 'Início',
+    'nav.about': 'Sobre',
+    'nav.resume': 'Currículo',
+    'nav.projects': 'Projetos',
+    'nav.contact': 'Contato',
+    'contact.eyebrow': 'Diga olá',
+    'contact.title': 'Entre em contato.',
+    'contact.lead': 'Uma vaga, uma colaboração, ou apenas uma conversa sobre dados — tudo é bem-vindo. E-mail é o mais rápido. Leio tudo e respondo a todos.',
+    'contact.email.label': 'E-mail',
+    'contact.phone.label': 'Telefone',
+    'contact.resume.label': 'Currículo',
+    'contact.resume.value': 'Baixar PDF',
+    'contact.location': 'Baseada em Tulsa, Oklahoma. Aberta a oportunidades remotas e híbridas em BI, analytics e dados.',
+    'footer.name': 'Cecilia Thompson',
+    'footer.tagline': 'Business Intelligence & Analytics',
+    'footer.copy': '© 2026 Cecilia Thompson. Todos os direitos reservados.'
+  }
+};
+
+const savedLang = localStorage.getItem('site-lang') || 'en';
+const savedTheme = localStorage.getItem('site-theme') || 'dark';
+
+function applyTranslation(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+  const langToggle = document.getElementById('lang-toggle');
+  if (langToggle) langToggle.textContent = lang === 'en' ? 'PT' : 'EN';
+}
+
+function applyTheme(theme) {
+  document.body.setAttribute('data-theme', theme);
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) themeToggle.textContent = theme === 'dark' ? '☀' : '☾';
+}
+
+function toggleLanguage() {
+  const current = document.documentElement.lang === 'pt' ? 'pt' : 'en';
+  const next = current === 'en' ? 'pt' : 'en';
+  localStorage.setItem('site-lang', next);
+  applyTranslation(next);
+}
+
+function toggleTheme() {
+  const current = document.body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  const next = current === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('site-theme', next);
+  applyTheme(next);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  applyTranslation(savedLang);
+  applyTheme(savedTheme);
+  document.getElementById('lang-toggle')?.addEventListener('click', toggleLanguage);
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+});
+</script>
+</body>
+</html>

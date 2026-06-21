@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects · Cecilia Thompson</title>
   <meta name="description" content="Selected work — what Cecilia Thompson has designed, built, and shipped." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
+
 <nav class="nav" aria-label="Primary navigation">
   <div class="nav__inner">
-    <a href="index.html" class="nav__logo">Cecilia<span>.</span></a>
+    <a href="index.html" class="nav__logo">Cecilia Thompson</a>
     <ul class="nav__links" id="nav-links" role="list">
-      <li><a href="index.html"     class="nav__link">Home</a></li>
-      <li><a href="about.html"    class="nav__link">About</a></li>
-      <li><a href="resume.html"   class="nav__link">Résumé</a></li>
-      <li><a href="projects.html" class="nav__link nav__link--active">Projects</a></li>
-      <li><a href="contact.html"  class="nav__link">Contact</a></li>
+      <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
+      <li><a href="resume.html" class="nav__link" data-i18n="nav.resume">Résumé</a></li>
+      <li><a href="projects.html" class="nav__link nav__link--active" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
     </ul>
-    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)"><span></span><span></span><span></span></button>
+    <div class="nav__controls">
+      <button class="nav__toggle" id="lang-toggle" aria-label="Switch language">PT</button>
+      <button class="nav__toggle nav__toggle--theme" id="theme-toggle" aria-label="Toggle theme">☀</button>
+    </div>
+    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
 <main id="main">
   <div class="page">
 
-    <span class="eyebrow">Work</span>
-    <h1>Projects.</h1>
-    <p class="lead" style="margin-top:1rem">A selection of what I've designed, built, and shipped — dashboards, analytics platforms, and people data work.</p>
+    <span class="eyebrow" data-i18n="proj.eyebrow">Work</span>
+    <h1 data-i18n="proj.title">Projects.</h1>
+    <p class="lead" style="margin-top:1rem" data-i18n="proj.lead">A selection of what I've designed, built, and shipped — dashboards, analytics platforms, and people data work.</p>
 
     <div class="proj-list" style="margin-top:3rem">
 
       <article id="enterprise-it-dashboard-suite" class="proj-item reveal">
         <div class="proj-meta">
           <div class="proj-year">2025</div>
-          <div class="proj-cat">BI Platform</div>
+          <div class="proj-cat" data-i18n="proj.card1.cat">BI Platform</div>
         </div>
         <div>
-          <div class="proj-title">Enterprise IT Dashboard Suite</div>
-          <div class="proj-kicker">Real-time visibility for CIO, IT directors & PMO · 100+ hrs saved / mo</div>
-          <div class="proj-desc">Led development of enterprise Power BI dashboards and semantic data models delivering real-time IT project performance visibility to executive leadership at Williams Companies. Integrated multiple source systems into a unified model, eliminating 100+ hours of manual monthly reporting and giving leadership a single source of truth for project health across the entire portfolio.</div>
+          <div class="proj-title" data-i18n="proj.card1.title">Enterprise IT Dashboard Suite</div>
+          <div class="proj-kicker" data-i18n="proj.card1.kicker">Real-time visibility for CIO, IT directors & PMO · 100+ hrs saved / mo</div>
+          <div class="proj-desc" data-i18n="proj.card1.desc">Led development of enterprise Power BI dashboards and semantic data models delivering real-time IT project performance visibility to executive leadership at Williams Companies. Integrated multiple source systems into a unified model, eliminating 100+ hours of manual monthly reporting and giving leadership a single source of truth for project health across the entire portfolio.</div>
           <div class="proj-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Semantic Modeling</span><span class="tag">Azure DevOps</span></div>
         </div>
       </article>
@@ -49,12 +58,12 @@
       <article class="proj-item reveal">
         <div class="proj-meta">
           <div class="proj-year">2025</div>
-          <div class="proj-cat">Automation</div>
+          <div class="proj-cat" data-i18n="proj.card2.cat">Automation</div>
         </div>
         <div>
-          <div class="proj-title">Automated Reporting Pipeline</div>
-          <div class="proj-kicker">100+ hours of manual work eliminated per month</div>
-          <div class="proj-desc">Designed and shipped an automated reporting solution for the Williams Companies PMO. Replaced a fully manual, multi-system reporting process with a live Power BI model connected to enterprise data sources — cutting 100+ hours of monthly labor and improving accuracy and timeliness of executive reporting.</div>
+          <div class="proj-title" data-i18n="proj.card2.title">Automated Reporting Pipeline</div>
+          <div class="proj-kicker" data-i18n="proj.card2.kicker">100+ hours of manual work eliminated per month</div>
+          <div class="proj-desc" data-i18n="proj.card2.desc">Designed and shipped an automated reporting solution for the Williams Companies PMO. Replaced a fully manual, multi-system reporting process with a live Power BI model connected to enterprise data sources — cutting 100+ hours of monthly labor and improving accuracy and timeliness of executive reporting.</div>
           <div class="proj-tags"><span class="tag">Power BI</span><span class="tag">Data Integration</span><span class="tag">Process Automation</span><span class="tag">KPI Design</span></div>
         </div>
       </article>
@@ -62,12 +71,12 @@
       <article class="proj-item reveal">
         <div class="proj-meta">
           <div class="proj-year">2025</div>
-          <div class="proj-cat">AI-Assisted BI</div>
+          <div class="proj-cat" data-i18n="proj.card3.cat">AI-Assisted BI</div>
         </div>
         <div>
-          <div class="proj-title">AI-Accelerated BI Development Workflow</div>
-          <div class="proj-kicker">Embedded AI tooling into the enterprise BI team</div>
-          <div class="proj-desc">Built and documented an AI-assisted development workflow for the BI team at Williams — using M365 Copilot, Cursor, and Perplexity to accelerate DAX authoring, SQL debugging, and documentation. Shared patterns and prompts with the broader team to improve collective delivery speed and consistency.</div>
+          <div class="proj-title" data-i18n="proj.card3.title">AI-Accelerated BI Development Workflow</div>
+          <div class="proj-kicker" data-i18n="proj.card3.kicker">Embedded AI tooling into the enterprise BI team</div>
+          <div class="proj-desc" data-i18n="proj.card3.desc">Built and documented an AI-assisted development workflow for the BI team at Williams — using M365 Copilot, Cursor, and Perplexity to accelerate DAX authoring, SQL debugging, and documentation. Shared patterns and prompts with the broader team to improve collective delivery speed and consistency.</div>
           <div class="proj-tags"><span class="tag">M365 Copilot</span><span class="tag">Cursor</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Documentation</span></div>
         </div>
       </article>
@@ -75,12 +84,12 @@
       <article id="onboarding-framework" class="proj-item reveal">
         <div class="proj-meta">
           <div class="proj-year">2024</div>
-          <div class="proj-cat">HR Analytics</div>
+          <div class="proj-cat" data-i18n="proj.card4.cat">HR Analytics</div>
         </div>
         <div>
-          <div class="proj-title">30/60/90-Day Onboarding Framework</div>
-          <div class="proj-kicker">New-hire engagement & early-tenure retention at CBIZ</div>
-          <div class="proj-desc">Analyzed employee lifecycle data to identify gaps in new-hire onboarding at CBIZ. Designed a structured 30/60/90-day touchpoint framework to improve engagement and early-tenure retention — presented findings and recommendations to HR leadership, which informed adoption of the framework across incoming cohorts.</div>
+          <div class="proj-title" data-i18n="proj.card4.title">30/60/90-Day Onboarding Framework</div>
+          <div class="proj-kicker" data-i18n="proj.card4.kicker">New-hire engagement & early-tenure retention at CBIZ</div>
+          <div class="proj-desc" data-i18n="proj.card4.desc">Analyzed employee lifecycle data to identify gaps in new-hire onboarding at CBIZ. Designed a structured 30/60/90-day touchpoint framework to improve engagement and early-tenure retention — presented findings and recommendations to HR leadership, which informed adoption of the framework across incoming cohorts.</div>
           <div class="proj-tags"><span class="tag">People Analytics</span><span class="tag">Workforce Data</span><span class="tag">Process Design</span><span class="tag">HR Strategy</span></div>
         </div>
       </article>
@@ -88,12 +97,12 @@
       <article class="proj-item reveal">
         <div class="proj-meta">
           <div class="proj-year">2024</div>
-          <div class="proj-cat">DEI & Learning</div>
+          <div class="proj-cat" data-i18n="proj.card5.cat">DEI & Learning</div>
         </div>
         <div>
-          <div class="proj-title">DEI Reporting & Learning Redesign</div>
-          <div class="proj-kicker">People data informing equity and development programs</div>
-          <div class="proj-desc">Contributed to DEI initiatives and policy revision projects at CBIZ, using people data to surface insights on equity gaps and engagement. Redesigned internal learning materials to improve usability and align with employee career-development pathways — improving consistency across onboarding cohorts.</div>
+          <div class="proj-title" data-i18n="proj.card5.title">DEI Reporting & Learning Redesign</div>
+          <div class="proj-kicker" data-i18n="proj.card5.kicker">People data informing equity and development programs</div>
+          <div class="proj-desc" data-i18n="proj.card5.desc">Contributed to DEI initiatives and policy revision projects at CBIZ, using people data to surface insights on equity gaps and engagement. Redesigned internal learning materials to improve usability and align with employee career-development pathways — improving consistency across onboarding cohorts.</div>
           <div class="proj-tags"><span class="tag">DEI Reporting</span><span class="tag">Learning Design</span><span class="tag">People Data</span><span class="tag">HR Process</span></div>
         </div>
       </article>
@@ -101,12 +110,12 @@
       <article class="proj-item reveal">
         <div class="proj-meta">
           <div class="proj-year">2011–15</div>
-          <div class="proj-cat">Finance Ops</div>
+          <div class="proj-cat" data-i18n="proj.card6.cat">Finance Ops</div>
         </div>
         <div>
-          <div class="proj-title">Finance Automation & AR Redesign</div>
-          <div class="proj-kicker">$300K+/mo in receivables · 50% faster reporting · 60% better data accuracy</div>
-          <div class="proj-desc">As Business Analyst at Sintese Comercial Hospitalar in Brazil, automated financial reporting in Excel — cutting production time by 50% with reusable templates adopted across the finance team. Managed $300K+ in monthly accounts receivable and reduced delinquency from 10% to 5% through trend analysis. Led data validation during an enterprise system migration, improving accuracy by 60%.</div>
+          <div class="proj-title" data-i18n="proj.card6.title">Finance Automation & AR Redesign</div>
+          <div class="proj-kicker" data-i18n="proj.card6.kicker">$300K+/mo in receivables · 50% faster reporting · 60% better data accuracy</div>
+          <div class="proj-desc" data-i18n="proj.card6.desc">As Business Analyst at Sintese Comercial Hospitalar in Brazil, automated financial reporting in Excel — cutting production time by 50% with reusable templates adopted across the finance team. Managed $300K+ in monthly accounts receivable and reduced delinquency from 10% to 5% through trend analysis. Led data validation during an enterprise system migration, improving accuracy by 60%.</div>
           <div class="proj-tags"><span class="tag">Excel Automation</span><span class="tag">Accounts Receivable</span><span class="tag">Data Validation</span><span class="tag">KPI Design</span><span class="tag">System Migration</span></div>
         </div>
       </article>
@@ -115,6 +124,159 @@
   </div>
 </main>
 
-<footer class="footer"><div class="footer__inner"><div class="footer__left"><div class="footer__name">Cecilia Thompson</div><div class="footer__tagline">Business Intelligence & Analytics · Tulsa, OK</div></div><div class="footer__links"><a href="https://www.linkedin.com/in/cecilia-t-38b101208/" target="_blank" rel="noopener" class="footer__link">LinkedIn</a><a href="mailto:estefanea.thompson@gmail.com" class="footer__link">Email</a><a href="resume.html" class="footer__link">Résumé</a></div></div><p class="footer__copy">© 2026 Cecilia Thompson. Views are my own.</p></footer>
-<script>function toggleNav(btn){var links=document.getElementById("nav-links");var open=links.classList.toggle("nav__links--open");btn.setAttribute("aria-expanded",String(open));btn.setAttribute("aria-label",open?"Close menu":"Open menu");}(function(){if("IntersectionObserver" in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("reveal--visible");obs.unobserve(e.target);}});},{threshold:0.08,rootMargin:"0px 0px -24px 0px"});document.querySelectorAll(".reveal").forEach(function(el){obs.observe(el);});}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("reveal--visible");});}})();</script>
-</body></html>
+<footer class="footer" aria-label="Site footer">
+  <div class="footer__inner">
+    <div class="footer__left">
+      <div class="footer__name" data-i18n="footer.name">Cecilia Thompson</div>
+      <div class="footer__tagline" data-i18n="footer.tagline">Business Intelligence & Analytics</div>
+    </div>
+    <div class="footer__links">
+      <a href="https://www.linkedin.com/in/cecilia-t-38b101208/" target="_blank" rel="noopener" class="footer__icon" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.4 9.1h2.3V18H6.4V9.1Zm1.15-1.95a1.33 1.33 0 1 1 0-2.66 1.33 1.33 0 0 1 0 2.66ZM10.8 9.1h2.2v1.18h.03c.3-.58 1.04-1.18 2.15-1.18 2.3 0 2.74 1.5 2.74 3.46V18h-2.3v-7.15c0-1.7-.03-3.88-2.35-3.88-2.36 0-2.72 1.84-2.72 3.74V18h-2.3V9.1Z"/>
+        </svg>
+      </a>
+      <a href="mailto:estefanea.thompson@gmail.com" class="footer__icon" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4.5 7.5h15a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Z"/>
+          <path d="m4.5 7.5 7.5 5 7.5-5"/>
+        </svg>
+      </a>
+      <a href="resume.html" class="footer__icon" aria-label="Résumé">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7.5 3.5h7l4.5 4.5V20a1.5 1.5 0 0 1-1.5 1.5H7.5A1.5 1.5 0 0 1 6 20V5A1.5 1.5 0 0 1 7.5 3.5Z"/>
+          <path d="M14.5 3.5v5h5"/>
+          <path d="M9.5 12.5h5M9.5 16h5M9.5 19.5h3.5"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <p class="footer__copy" data-i18n="footer.copy">© 2026 Cecilia Thompson. Views are my own.</p>
+</footer>
+
+<script>
+function toggleNav(btn){var links=document.getElementById("nav-links");var open=links.classList.toggle("nav__links--open");btn.setAttribute("aria-expanded",String(open));btn.setAttribute("aria-label",open?"Close menu":"Open menu");}
+(function(){if("IntersectionObserver" in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("reveal--visible");obs.unobserve(e.target);}});},{threshold:0.08,rootMargin:"0px 0px -24px 0px"});document.querySelectorAll(".reveal").forEach(function(el){obs.observe(el);});}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("reveal--visible");});}})();
+</script>
+<script>
+const translations = {
+  en: {
+    'nav.home': 'Home',
+    'nav.about': 'About',
+    'nav.resume': 'Résumé',
+    'nav.projects': 'Projects',
+    'nav.contact': 'Contact',
+    'proj.eyebrow': 'Work',
+    'proj.title': 'Projects.',
+    'proj.lead': 'A selection of what I\'ve designed, built, and shipped — dashboards, analytics platforms, and people data work.',
+    'proj.card1.cat': 'BI Platform',
+    'proj.card1.title': 'Enterprise IT Dashboard Suite',
+    'proj.card1.kicker': 'Real-time visibility for CIO, IT directors & PMO · 100+ hrs saved / mo',
+    'proj.card1.desc': 'Led development of enterprise Power BI dashboards and semantic data models delivering real-time IT project performance visibility to executive leadership at Williams Companies. Integrated multiple source systems into a unified model, eliminating 100+ hours of manual monthly reporting and giving leadership a single source of truth for project health across the entire portfolio.',
+    'proj.card2.cat': 'Automation',
+    'proj.card2.title': 'Automated Reporting Pipeline',
+    'proj.card2.kicker': '100+ hours of manual work eliminated per month',
+    'proj.card2.desc': 'Designed and shipped an automated reporting solution for the Williams Companies PMO. Replaced a fully manual, multi-system reporting process with a live Power BI model connected to enterprise data sources — cutting 100+ hours of monthly labor and improving accuracy and timeliness of executive reporting.',
+    'proj.card3.cat': 'AI-Assisted BI',
+    'proj.card3.title': 'AI-Accelerated BI Development Workflow',
+    'proj.card3.kicker': 'Embedded AI tooling into the enterprise BI team',
+    'proj.card3.desc': 'Built and documented an AI-assisted development workflow for the BI team at Williams — using M365 Copilot, Cursor, and Perplexity to accelerate DAX authoring, SQL debugging, and documentation. Shared patterns and prompts with the broader team to improve collective delivery speed and consistency.',
+    'proj.card4.cat': 'HR Analytics',
+    'proj.card4.title': '30/60/90-Day Onboarding Framework',
+    'proj.card4.kicker': 'New-hire engagement & early-tenure retention at CBIZ',
+    'proj.card4.desc': 'Analyzed employee lifecycle data to identify gaps in new-hire onboarding at CBIZ. Designed a structured 30/60/90-day touchpoint framework to improve engagement and early-tenure retention — presented findings and recommendations to HR leadership, which informed adoption of the framework across incoming cohorts.',
+    'proj.card5.cat': 'DEI & Learning',
+    'proj.card5.title': 'DEI Reporting & Learning Redesign',
+    'proj.card5.kicker': 'People data informing equity and development programs',
+    'proj.card5.desc': 'Contributed to DEI initiatives and policy revision projects at CBIZ, using people data to surface insights on equity gaps and engagement. Redesigned internal learning materials to improve usability and align with employee career-development pathways — improving consistency across onboarding cohorts.',
+    'proj.card6.cat': 'Finance Ops',
+    'proj.card6.title': 'Finance Automation & AR Redesign',
+    'proj.card6.kicker': '$300K+/mo in receivables · 50% faster reporting · 60% better data accuracy',
+    'proj.card6.desc': 'As Business Analyst at Sintese Comercial Hospitalar in Brazil, automated financial reporting in Excel — cutting production time by 50% with reusable templates adopted across the finance team. Managed $300K+ in monthly accounts receivable and reduced delinquency from 10% to 5% through trend analysis. Led data validation during an enterprise system migration, improving accuracy by 60%.',
+    'footer.name': 'Cecilia Thompson',
+    'footer.tagline': 'Business Intelligence & Analytics',
+    'footer.copy': '© 2026 Cecilia Thompson. Views are my own.'
+  },
+  pt: {
+    'nav.home': 'Início',
+    'nav.about': 'Sobre',
+    'nav.resume': 'Currículo',
+    'nav.projects': 'Projetos',
+    'nav.contact': 'Contato',
+    'proj.eyebrow': 'Trabalho',
+    'proj.title': 'Projetos.',
+    'proj.lead': 'Uma seleção do que projetei, construí e entreguei — dashboards, plataformas de analytics e trabalho com dados de pessoas.',
+    'proj.card1.cat': 'Plataforma BI',
+    'proj.card1.title': 'Enterprise IT Dashboard Suite',
+    'proj.card1.kicker': 'Visibilidade em tempo real para CIO, diretores de TI e PMO · 100+ hrs economizadas/mês',
+    'proj.card1.desc': 'Liderei o desenvolvimento de dashboards Power BI empresariais e modelos semânticos de dados, entregando visibilidade em tempo real do desempenho de projetos de TI para a liderança executiva na Williams Companies. Integrei múltiplos sistemas em um modelo unificado, eliminando mais de 100 horas de relatórios manuais mensais e fornecendo à liderança uma fonte única de verdade para a saúde dos projetos em todo o portfólio.',
+    'proj.card2.cat': 'Automação',
+    'proj.card2.title': 'Pipeline de Relatórios Automatizado',
+    'proj.card2.kicker': 'Mais de 100 horas de trabalho manual eliminadas por mês',
+    'proj.card2.desc': 'Projetei e entreguei uma solução de relatórios automatizada para o PMO da Williams Companies. Substituí um processo totalmente manual e multi-sistemas por um modelo Power BI conectado a fontes de dados empresariais — cortando mais de 100 horas de trabalho mensal e melhorando a precisão e pontualidade dos relatórios executivos.',
+    'proj.card3.cat': 'BI com IA',
+    'proj.card3.title': 'Workflow de BI Acelerado por IA',
+    'proj.card3.kicker': 'Ferramentas de IA integradas à equipe de BI',
+    'proj.card3.desc': 'Construí e documentei um workflow de desenvolvimento assistido por IA para a equipe de BI da Williams — usando M365 Copilot, Cursor e Perplexity para acelerar a criação de DAX, depuração de SQL e documentação. Compartilhei padrões e prompts com a equipe para melhorar a velocidade e consistência coletiva.',
+    'proj.card4.cat': 'Analytics de RH',
+    'proj.card4.title': 'Framework de Onboarding 30/60/90 Dias',
+    'proj.card4.kicker': 'Engajamento de novos funcionários e retenção na CBIZ',
+    'proj.card4.desc': 'Analisei dados do ciclo de vida dos funcionários para identificar lacunas no onboarding na CBIZ. Projetei um framework estruturado de pontos de contato de 30/60/90 dias para melhorar o engajamento e a retenção — apresentei descobertas e recomendações à liderança de RH, que informaram a adoção do framework em novas turmas.',
+    'proj.card5.cat': 'DEI & Aprendizado',
+    'proj.card5.title': 'Relatórios de DEI & Redesign de Aprendizado',
+    'proj.card5.kicker': 'Dados de pessoas informando programas de equidade e desenvolvimento',
+    'proj.card5.desc': 'Contribuí para iniciativas de DEI e projetos de revisão de políticas na CBIZ, usando dados de pessoas para identificar lacunas de equidade e engajamento. Redesenhei materiais de aprendizado internos para melhorar a usabilidade e alinhar com trilhas de desenvolvimento de carreira — melhorando a consistência entre turmas de onboarding.',
+    'proj.card6.cat': 'Operações Financeiras',
+    'proj.card6.title': 'Automação Financeira & Redesign de Contas a Receber',
+    'proj.card6.kicker': 'R$1,5M+/mês em recebíveis · Relatórios 50% mais rápidos · Precisão de dados 60% melhor',
+    'proj.card6.desc': 'Como Analista de Negócios na Síntese Comercial Hospitalar no Brasil, automatizei relatórios financeiros em Excel — reduzindo o tempo de produção em 50% com templates reutilizáveis adotados pela equipe financeira. Gerenciei mais de R$1,5M em contas a receber mensais e reduzi a inadimplência de 10% para 5% através de análise de tendências. Liderei a validação de dados durante uma migração de sistema, melhorando a precisão em 60%.',
+    'footer.name': 'Cecilia Thompson',
+    'footer.tagline': 'Business Intelligence & Analytics',
+    'footer.copy': '© 2026 Cecilia Thompson. Todos os direitos reservados.'
+  }
+};
+
+const savedLang = localStorage.getItem('site-lang') || 'en';
+const savedTheme = localStorage.getItem('site-theme') || 'dark';
+
+function applyTranslation(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+  const langToggle = document.getElementById('lang-toggle');
+  if (langToggle) langToggle.textContent = lang === 'en' ? 'PT' : 'EN';
+}
+
+function applyTheme(theme) {
+  document.body.setAttribute('data-theme', theme);
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) themeToggle.textContent = theme === 'dark' ? '☀' : '☾';
+}
+
+function toggleLanguage() {
+  const current = document.documentElement.lang === 'pt' ? 'pt' : 'en';
+  const next = current === 'en' ? 'pt' : 'en';
+  localStorage.setItem('site-lang', next);
+  applyTranslation(next);
+}
+
+function toggleTheme() {
+  const current = document.body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  const next = current === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('site-theme', next);
+  applyTheme(next);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  applyTranslation(savedLang);
+  applyTheme(savedTheme);
+  document.getElementById('lang-toggle')?.addEventListener('click', toggleLanguage);
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+});
+</script>
+</body>
+</html>
