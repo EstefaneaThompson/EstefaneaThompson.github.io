@@ -754,15 +754,15 @@ hr {
 }
 .hero__photo {
   flex-shrink: 0;
-  width: 280px;
-  height: 280px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--accent);
 }
 .hero__photo img {
-  width: 280px;
-  height: 280px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   display: block;
   max-width: none;
@@ -774,13 +774,13 @@ hr {
     gap: 2rem;
   }
   .hero__photo {
-    width: 220px;
-    height: 220px;
+    width: 150px;
+    height: 150px;
     margin-inline: auto;
   }
   .hero__photo img {
-    width: 220px;
-    height: 220px;
+    width: 150px;
+    height: 150px;
   }
   .hero__actions { justify-content: center; }
 }
