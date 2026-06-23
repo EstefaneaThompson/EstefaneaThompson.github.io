@@ -745,7 +745,7 @@ hr {
 .hero { padding: 5rem 0 2rem; }
 .hero--split {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 3rem;
 }
 .hero__text {
