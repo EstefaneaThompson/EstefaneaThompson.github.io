@@ -148,6 +148,42 @@
 
         <div class="pc reveal" onclick="showDetail(3)">
           <div class="pc__top">
+            <div class="pc__icon">🔍</div>
+            <span class="pc__arrow">→</span>
+          </div>
+          <div class="pc__cat" data-i18n="proj.card7.cat">Analytics Platform</div>
+          <div class="pc__title" data-i18n="proj.card7.title">Analytics Front Door (Discovery Hub)</div>
+          <div class="pc__kicker" data-i18n="proj.card7.kicker">Metadata-driven discovery for 14,000+ BI assets</div>
+          <div class="pc__desc" data-i18n="proj.card7.desc">Designed a scalable analytics discovery framework to help users find and reuse existing Power BI reports and semantic models.</div>
+          <div class="pc__tags"><span class="tag">Power BI</span><span class="tag">Databricks</span><span class="tag">Genie</span><span class="tag">SharePoint</span></div>
+        </div>
+
+        <div class="pc reveal" onclick="showDetail(4)">
+          <div class="pc__top">
+            <div class="pc__icon">📋</div>
+            <span class="pc__arrow">→</span>
+          </div>
+          <div class="pc__cat" data-i18n="proj.card8.cat">Project Tracking</div>
+          <div class="pc__title" data-i18n="proj.card8.title">Delivery Management Center (DMC)</div>
+          <div class="pc__kicker" data-i18n="proj.card8.kicker">Enterprise IT project tracking & portfolio visibility</div>
+          <div class="pc__desc" data-i18n="proj.card8.desc">Built a Power BI solution for real-time IT project health, financials, and delivery status during ServiceNow to Ivanti migration.</div>
+          <div class="pc__tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Azure DevOps</span></div>
+        </div>
+
+        <div class="pc reveal" onclick="showDetail(5)">
+          <div class="pc__top">
+            <div class="pc__icon">🔄</div>
+            <span class="pc__arrow">→</span>
+          </div>
+          <div class="pc__cat" data-i18n="proj.card9.cat">Data Integration</div>
+          <div class="pc__title" data-i18n="proj.card9.title">Business Transformation Dashboard</div>
+          <div class="pc__kicker" data-i18n="proj.card9.kicker">Cross-system enterprise initiative tracking</div>
+          <div class="pc__desc" data-i18n="proj.card9.desc">Consolidated four disparate data sources into a unified Power BI platform for tracking business transformation initiatives.</div>
+          <div class="pc__tags"><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Databricks</span><span class="tag">DAX</span></div>
+        </div>
+
+        <div class="pc reveal" onclick="showDetail(6)">
+          <div class="pc__top">
             <div class="pc__icon">👥</div>
             <span class="pc__arrow">→</span>
           </div>
@@ -158,7 +194,7 @@
           <div class="pc__tags"><span class="tag">People Analytics</span><span class="tag">Process Design</span><span class="tag">HR Strategy</span></div>
         </div>
 
-        <div class="pc reveal" onclick="showDetail(4)">
+        <div class="pc reveal" onclick="showDetail(7)">
           <div class="pc__top">
             <div class="pc__icon">🌍</div>
             <span class="pc__arrow">→</span>
@@ -170,7 +206,7 @@
           <div class="pc__tags"><span class="tag">DEI Reporting</span><span class="tag">Learning Design</span><span class="tag">People Data</span></div>
         </div>
 
-        <div class="pc reveal" onclick="showDetail(5)">
+        <div class="pc reveal" onclick="showDetail(8)">
           <div class="pc__top">
             <div class="pc__icon">💰</div>
             <span class="pc__arrow">→</span>
@@ -280,6 +316,36 @@ var projects = [
     tags:['M365 Copilot','Cursor','Perplexity','DAX','SQL','Documentation']
   },
   {
+    cat:'Analytics Platform', title:'Analytics Front Door (Discovery & Reuse Hub)',
+    kicker:'Metadata-driven discovery layer for Power BI assets',
+    role:'BI Developer / Analytics Engineer', timeline:'2026 – Present', company:'Williams Companies, Inc.',
+    overview:'Designed a metadata-driven analytics discovery framework to help users find, understand, and reuse existing Power BI reports and semantic models across a large enterprise environment (~14,000+ artifacts). The solution establishes the foundation for a scalable "analytics front door" experience that reduces duplicate reporting and improves governance.',
+    challenge:'Users had no reliable way to discover existing reports or datasets, leading to duplicated dashboards, inconsistent definitions, and increased support demand. Ownership, endorsement status, and usage metrics were not easily accessible in a unified view.',
+    solution:'Defined a structured metadata model for Power BI assets including workspaces, reports, semantic models, ownership, endorsement status, and usage signals. Designed a scalable architecture using Power BI metadata extraction with Databricks Delta tables as a central store. Enabled natural language discovery through a Genie-based search layer and proposed SharePoint as a lightweight entry point for users to search before requesting new work.',
+    results:['Established a scalable foundation for enterprise-wide analytics discovery','Improved visibility into existing reports and semantic models','Reduced likelihood of duplicate report creation by enabling reuse-first behavior','Created a reusable metadata framework for future governance and cleanup initiatives','Enabled future expansion into full analytics catalog and IT front door'],
+    tags:['Power BI','Databricks','Fabric / Power BI Admin APIs','Genie (AI search layer)','SharePoint']
+  },
+  {
+    cat:'Project Tracking', title:'Delivery Management Center (DMC)',
+    kicker:'Enterprise IT project tracking and portfolio visibility solution',
+    role:'BI Developer / Data Modeler', timeline:'2025 – 2026', company:'Williams Companies, Inc.',
+    overview:'Built an enterprise Power BI solution to replace fragmented project tracking during the transition from ServiceNow to Ivanti. The Delivery Management Center (DMC) provides real-time visibility into IT project health, financials, and delivery status for project managers and leadership.',
+    challenge:'The migration from ServiceNow to Ivanti removed critical project tracking capabilities, leaving leadership without a reliable system to monitor project progress, financials, and delivery risk. Existing tracking was manual, inconsistent, and lacked executive-level visibility.',
+    solution:'Designed and implemented a centralized Power BI data model combining project, financial, and delivery datasets. Integrated multiple sources into a unified semantic model to standardize definitions of project status, health, and ownership. Developed dashboards that provide drill-down visibility into project timelines, financial tracking, and risk indicators for PMs and leadership stakeholders.',
+    results:['Restored enterprise visibility into IT project delivery after system transition','Improved tracking accuracy for project health and financial performance','Enabled leadership to identify at-risk or delayed projects faster','Reduced reliance on manual reporting and disconnected tracking tools','Provided a scalable reporting foundation for future PMO enhancements'],
+    tags:['Power BI','DAX','SQL','Azure DevOps','Semantic Modeling']
+  },
+  {
+    cat:'Data Integration', title:'Business Transformation Initiative Dashboard',
+    kicker:'Cross-system enterprise initiative tracking platform',
+    role:'BI Developer / Data Integration Analyst', timeline:'2024', company:'Williams Companies, Inc.',
+    overview:'Developed a consolidated Power BI reporting solution that integrates four disparate data sources to track enterprise business transformation initiatives. The solution provides a unified view of initiative progress, alignment, and delivery across multiple business units.',
+    challenge:'Business transformation tracking was fragmented across multiple systems, making it difficult to monitor initiative progress or understand cross-functional dependencies. Leadership lacked a single source of truth for transformation execution.',
+    solution:'Integrated four separate enterprise data sources into a unified Power BI semantic model. Standardized initiative definitions and aligned metrics across systems to ensure consistency. Built interactive dashboards that provide visibility into initiative status, progress trends, and delivery alignment across teams.',
+    results:['Created a single source of truth for business transformation tracking','Improved cross-functional visibility into initiative progress and dependencies','Reduced data fragmentation across multiple reporting systems','Enabled more consistent and reliable executive reporting','Improved decision-making through consolidated analytics views'],
+    tags:['Power BI','SQL','Databricks','Data Modeling','DAX']
+  },
+  {
     cat:'HR Analytics', title:'30/60/90-Day Onboarding Framework',
     kicker:'New-hire engagement & early-tenure retention at CBIZ',
     role:'HR Operations & Insights Intern', timeline:'Jan – May 2024', company:'CBIZ',
@@ -350,6 +416,9 @@ const translations = {
     'proj.card4.cat':'HR Analytics','proj.card4.title':'30/60/90-Day Onboarding Framework','proj.card4.kicker':'New-hire engagement & retention at CBIZ','proj.card4.desc':'Structured touchpoint framework to improve onboarding engagement and early-tenure retention.',
     'proj.card5.cat':'DEI & Learning','proj.card5.title':'DEI Reporting & Learning Redesign','proj.card5.kicker':'People data informing equity programs','proj.card5.desc':'Used people data to surface equity gaps and redesigned internal learning materials at CBIZ.',
     'proj.card6.cat':'Finance Ops','proj.card6.title':'Finance Automation & AR Redesign','proj.card6.kicker':'$300K+/mo · 50% faster · 60% more accurate','proj.card6.desc':'Automated financial reporting and reduced AR delinquency at Sintese Comercial Hospitalar in Brazil.',
+    'proj.card7.cat':'Analytics Platform','proj.card7.title':'Analytics Front Door (Discovery Hub)','proj.card7.kicker':'Metadata-driven discovery for 14,000+ BI assets','proj.card7.desc':'Designed a scalable analytics discovery framework to help users find and reuse existing Power BI reports and semantic models.',
+    'proj.card8.cat':'Project Tracking','proj.card8.title':'Delivery Management Center (DMC)','proj.card8.kicker':'Enterprise IT project tracking & portfolio visibility','proj.card8.desc':'Built a Power BI solution for real-time IT project health, financials, and delivery status during ServiceNow to Ivanti migration.',
+    'proj.card9.cat':'Data Integration','proj.card9.title':'Business Transformation Dashboard','proj.card9.kicker':'Cross-system enterprise initiative tracking','proj.card9.desc':'Consolidated four disparate data sources into a unified Power BI platform for tracking business transformation initiatives.',
     'footer.name':'Cecilia Thompson','footer.tagline':'Business Intelligence & Analytics','footer.copy':'© 2026 Cecilia Thompson. Views are my own.'
   },
   pt: {
@@ -362,6 +431,9 @@ const translations = {
     'proj.card4.cat':'Analytics de RH','proj.card4.title':'Framework de Onboarding 30/60/90 Dias','proj.card4.kicker':'Engajamento de novos funcionários e retenção na CBIZ','proj.card4.desc':'Framework de pontos de contato para melhorar engajamento e retenção no onboarding.',
     'proj.card5.cat':'DEI & Aprendizado','proj.card5.title':'Relatórios de DEI & Redesign de Aprendizado','proj.card5.kicker':'Dados informando programas de equidade','proj.card5.desc':'Dados de pessoas para identificar lacunas de equidade e redesenhar materiais de aprendizado.',
     'proj.card6.cat':'Operações Financeiras','proj.card6.title':'Automação Financeira & Redesign de CR','proj.card6.kicker':'R$1,5M+/mês · 50% mais rápido · 60% mais preciso','proj.card6.desc':'Automatizei relatórios financeiros e reduzi inadimplência na Síntese Comercial Hospitalar.',
+    'proj.card7.cat':'Plataforma Analytics','proj.card7.title':'Analytics Front Door (Hub de Descoberta)','proj.card7.kicker':'Descoberta baseada em metadados para 14.000+ ativos de BI','proj.card7.desc':'Projetei um framework de descoberta de analytics para ajudar usuários a encontrar e reutilizar relatórios e modelos Power BI existentes.',
+    'proj.card8.cat':'Gestão de Projetos','proj.card8.title':'Delivery Management Center (DMC)','proj.card8.kicker':'Rastreamento de projetos de TI e visibilidade do portfólio','proj.card8.desc':'Construí uma solução Power BI para visibilidade em tempo real de saúde, finanças e status de entrega de projetos de TI.',
+    'proj.card9.cat':'Integração de Dados','proj.card9.title':'Dashboard de Transformação de Negócios','proj.card9.kicker':'Rastreamento de iniciativas empresariais entre sistemas','proj.card9.desc':'Consolidei quatro fontes de dados em uma plataforma Power BI unificada para rastrear iniciativas de transformação.',
     'footer.name':'Cecilia Thompson','footer.tagline':'Business Intelligence & Analytics','footer.copy':'© 2026 Cecilia Thompson. Todos os direitos reservados.'
   }
 };
