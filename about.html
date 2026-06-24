@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
@@ -34,10 +34,17 @@
 </nav>
 
 <main id="main">
-  <div class="page">
+  <div class="page page--wide">
 
-    <span class="eyebrow" data-i18n="about.eyebrow">About</span>
-    <h1 data-i18n="about.title">A bit about me.</h1>
+    <section class="hero hero--split" style="padding-top:3rem;padding-bottom:2rem">
+      <div class="hero__text">
+        <span class="eyebrow" data-i18n="about.eyebrow">About</span>
+        <h1 data-i18n="about.title">A bit about me.</h1>
+      </div>
+      <div class="hero__photo">
+        <img src="assets/profile.png" alt="Cecilia Thompson" />
+      </div>
+    </section>
 
     <div class="prose reveal" style="margin-top:2rem">
       <p data-i18n="about.p1">In 2015 I arrived in the United States from <strong>Brazil</strong> with no English, no degree, and no roadmap. What I had was a work ethic built from necessity and a belief that hard things are worth doing.</p>
