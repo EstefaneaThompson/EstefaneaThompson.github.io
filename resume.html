@@ -8,7 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=7" />
+  <style>
+    .tl { position: relative; padding-left: 2rem; }
+    .tl::before { content: ''; position: absolute; left: 5px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+    .tl-row { position: relative; padding: 0 0 3rem 0; border-bottom: none; display: block; }
+    .tl-row:last-child { padding-bottom: 0; }
+    .tl-row::before { content: ''; position: absolute; left: -2rem; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); z-index: 1; }
+    .tl-row:first-child::before { width: 14px; height: 14px; left: calc(-2rem - 1px); box-shadow: 0 0 0 3px var(--accent-faint); }
+    .tl-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.15rem; }
+    .tl-date-inline { font-family: var(--mono); font-size: 0.72rem; color: var(--text-faint); white-space: nowrap; }
+  </style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
@@ -36,10 +46,11 @@
 <main id="main">
   <div class="page">
 
-    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:2rem">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem">
       <div>
         <h1 style="font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:.25rem" data-i18n="resume.name">Cecilia Thompson</h1>
-        <p style="color:var(--text-muted);font-size:.9rem" data-i18n="resume.tagline">Business Intelligence & Analytics · Tulsa, OK</p>
+        <p style="color:var(--text-muted);font-size:.85rem" data-i18n="resume.tagline">Business Intelligence & Analytics | Power BI · SQL · Databricks</p>
+        <p style="color:var(--text-faint);font-size:.78rem;margin-top:.3rem">Tulsa, OK · (918) 901-9697 · estefanea.thompson@gmail.com</p>
       </div>
       <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;padding-top:.25rem">
         <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn btn--ghost">↓ PDF</a>
@@ -47,114 +58,124 @@
       </div>
     </div>
 
-    <p class="lead reveal" data-i18n="resume.lead">Data analyst and BI professional with 5+ years turning business and operational data into dashboards, reports, and actionable insights. Skilled in Power BI, SQL, Databricks, and data modeling. Currently pursuing a Master's in Business Analytics & Data Science at Oklahoma State, expected December 2026.</p>
+    <hr/>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <section class="reveal">
+      <span class="eyebrow" data-i18n="resume.summary.eyebrow">Professional Summary</span>
+      <p class="prose" data-i18n="resume.lead">Data analyst and business intelligence professional with 5+ years of experience turning business and operational data into dashboards, reports, and actionable insights. Skilled in SQL, Power BI, Databricks, advanced Excel, and data modeling, with a strong background in data validation, automation, and executive reporting. Known for translating complex datasets into clear recommendations that improve decision-making, efficiency, and performance. Currently pursuing a Master's in Business Analytics & Data Science at Oklahoma State, expected December 2026.</p>
+    </section>
 
     <hr/>
 
-    <!-- EXPERIENCE -->
-    <section>
-      <span class="eyebrow" data-i18n="resume.exp.eyebrow">Experience</span>
-      <div class="tl">
-
-        <div class="tl-row reveal">
-          <div class="tl-date">2025 –<br/>Present</div>
-          <div>
-            <span class="tl-badge" data-i18n="resume.exp1.badge">Current</span>
-            <div class="tl-role" data-i18n="resume.exp1.role">IT Business Intelligence & Reporting</div>
-            <div class="tl-co">Williams Companies, Inc.</div>
-            <div class="tl-loc" data-i18n="resume.exp1.loc">Fortune 500 Energy Infrastructure · Tulsa, OK</div>
-            <ul class="tl-bullets">
-              <li data-i18n="resume.exp1.b1">Lead development of enterprise Power BI dashboards and semantic data models used by leaders across IT, operations, and finance.</li>
-              <li data-i18n="resume.exp1.b2">Partner with business stakeholders to translate requirements into data models aligned with enterprise data standards.</li>
-              <li data-i18n="resume.exp1.b3">Troubleshoot advanced DAX, data, and performance issues to improve report reliability, query performance, and end-user adoption.</li>
-              <li data-i18n="resume.exp1.b4">Validate large datasets in Databricks and SQL to ensure data integrity across enterprise reporting pipelines.</li>
-              <li data-i18n="resume.exp1.b5">Manage analytics delivery through Azure DevOps (Boards, sprints, pull requests), running multiple projects in parallel.</li>
-              <li data-i18n="resume.exp1.b6">Use AI tools (M365 Copilot, Cursor, Perplexity) to accelerate development and share patterns with the broader BI team.</li>
-              <li data-i18n="resume.exp1.b7">Enable self-service analytics through stakeholder training and improved organizational data literacy.</li>
-            </ul>
-            <div class="tl-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Databricks</span><span class="tag">Azure DevOps</span><span class="tag">Semantic Modeling</span></div>
+    <!-- CORE COMPETENCIES -->
+    <section class="reveal">
+      <span class="eyebrow" data-i18n="resume.skills.eyebrow">Core Competencies</span>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;margin-top:0.5rem">
+        <div>
+          <div class="skill-group">
+            <div class="skill-group__title" data-i18n="resume.skills.bi">BI & Analytics</div>
+            <div class="skill-group__tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Semantic Modeling</span><span class="tag">SQL</span><span class="tag">Databricks</span><span class="tag">Advanced Excel</span><span class="tag">Data Modeling</span><span class="tag">Performance Optimization</span></div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group__title" data-i18n="resume.skills.ai">AI-Assisted Development</div>
+            <div class="skill-group__tags"><span class="tag">M365 Copilot</span><span class="tag">Cursor</span><span class="tag">Perplexity</span></div>
           </div>
         </div>
-
-        <div class="tl-row reveal">
-          <div class="tl-date">May –<br/>Aug 2024</div>
-          <div>
-            <span class="tl-badge" data-i18n="resume.exp2.badge">Internship</span>
-            <div class="tl-role" data-i18n="resume.exp2.role">IT Business Intelligence & Reporting Intern</div>
-            <div class="tl-co">Williams Companies, Inc.</div>
-            <div class="tl-loc">Tulsa, OK</div>
-            <ul class="tl-bullets">
-              <li data-i18n="resume.exp2.b1">Built an enterprise Power BI dashboard delivering real-time IT project performance visibility to executive leadership (CIO, IT directors, PMO).</li>
-              <li data-i18n="resume.exp2.b2">Designed an automated reporting solution that eliminated 100+ hours of manual work per month for the project management team.</li>
-              <li data-i18n="resume.exp2.b3">Integrated data from multiple source systems into a unified model — single source of truth for executive project performance.</li>
-              <li data-i18n="resume.exp2.b4">Designed KPI-driven visualizations to track project health, timelines, and performance against enterprise benchmarks.</li>
-            </ul>
-            <div class="tl-tags"><span class="tag">Power BI</span><span class="tag">KPI Design</span><span class="tag">Data Integration</span><span class="tag">Agile</span></div>
+        <div>
+          <div class="skill-group">
+            <div class="skill-group__title" data-i18n="resume.skills.systems">Systems & Delivery</div>
+            <div class="skill-group__tags"><span class="tag">Azure DevOps</span><span class="tag">Agile / Scrum</span><span class="tag">Data Validation</span><span class="tag">Requirements Gathering</span><span class="tag">Documentation</span><span class="tag">Enterprise System Implementation</span></div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group__title" data-i18n="resume.skills.stakeholder">Stakeholder & Communication</div>
+            <div class="skill-group__tags"><span class="tag">Executive Reporting</span><span class="tag">Stakeholder Training</span><span class="tag">Cross-Functional Partnership</span><span class="tag">Bilingual (EN / PT)</span></div>
           </div>
         </div>
-
-        <div class="tl-row reveal">
-          <div class="tl-date">Jan –<br/>May 2024</div>
-          <div>
-            <span class="tl-badge" data-i18n="resume.exp3.badge">Internship</span>
-            <div class="tl-role" data-i18n="resume.exp3.role">HR Operations & Insights Intern</div>
-            <div class="tl-co">CBIZ</div>
-            <div class="tl-loc">Tulsa, OK</div>
-            <ul class="tl-bullets">
-              <li data-i18n="resume.exp3.b1">Analyzed employee lifecycle data to identify onboarding gaps and delivered recommendations that informed HR process improvements.</li>
-              <li data-i18n="resume.exp3.b2">Designed a 30/60/90-day touchpoint framework to improve new-hire engagement and early-tenure retention; presented to HR leadership.</li>
-              <li data-i18n="resume.exp3.b3">Contributed to DEI initiatives, policy revisions, and internal learning frameworks.</li>
-            </ul>
-            <div class="tl-tags"><span class="tag">People Analytics</span><span class="tag">DEI Reporting</span><span class="tag">Process Design</span></div>
-          </div>
-        </div>
-
-        <div class="tl-row reveal">
-          <div class="tl-date">2011 –<br/>2015</div>
-          <div>
-            <span class="tl-badge">Brazil 🇧🇷</span>
-            <div class="tl-role" data-i18n="resume.exp4.role">Business Analyst, Finance Operations</div>
-            <div class="tl-co">Sintese Comercial Hospitalar</div>
-            <div class="tl-loc" data-i18n="resume.exp4.loc">Goiânia, Brazil</div>
-            <ul class="tl-bullets">
-              <li data-i18n="resume.exp4.b1">Led data validation and cleansing during enterprise system implementation — improved data accuracy by 60%.</li>
-              <li data-i18n="resume.exp4.b2">Automated financial reporting in advanced Excel, reducing production time by 50% with templates adopted across the finance team.</li>
-              <li data-i18n="resume.exp4.b3">Managed and analyzed $300K+ in monthly accounts receivable, reducing delinquency from 10% to 5% through trend analysis and process redesign.</li>
-            </ul>
-            <div class="tl-tags"><span class="tag">Excel Automation</span><span class="tag">Accounts Receivable</span><span class="tag">Data Validation</span><span class="tag">KPI Design</span></div>
-          </div>
-        </div>
-
       </div>
     </section>
 
     <hr/>
 
-    <!-- SKILLS -->
-    <section class="reveal">
-      <span class="eyebrow" data-i18n="resume.skills.eyebrow">Skills</span>
-      <h2 style="margin-bottom:1.75rem" data-i18n="resume.skills.title">Core competencies.</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
-        <div>
-          <div class="skill-group">
-            <div class="skill-group__title" data-i18n="resume.skills.bi">BI & Analytics</div>
-            <div class="skill-group__tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Semantic Modeling</span><span class="tag">SQL</span><span class="tag">Databricks</span><span class="tag">Advanced Excel</span><span class="tag">Data Modeling</span></div>
+    <!-- EXPERIENCE -->
+    <section>
+      <span class="eyebrow" data-i18n="resume.exp.eyebrow">Professional Experience</span>
+      <div class="tl">
+
+        <div class="tl-row reveal">
+          <div class="tl-header">
+            <div class="tl-role" data-i18n="resume.exp1.role">IT Business Intelligence & Reporting</div>
+            <div class="tl-date-inline">2025 – Present</div>
           </div>
-          <div class="skill-group">
-            <div class="skill-group__title" data-i18n="resume.skills.ai">AI-Assisted Development</div>
-            <div class="skill-group__tags"><span class="tag">M365 Copilot</span><span class="tag">Cursor</span><span class="tag">Perplexity</span><span class="tag">Prompt Engineering</span></div>
-          </div>
+          <div class="tl-co">Williams Companies, Inc.</div>
+          <div class="tl-loc" data-i18n="resume.exp1.loc">Fortune 500 Energy Infrastructure · Tulsa, OK</div>
+          <ul class="tl-bullets">
+            <li data-i18n="resume.exp1.b1">Lead development of enterprise Power BI dashboards and semantic data models used by leaders across IT, operations, and finance.</li>
+            <li data-i18n="resume.exp1.b2">Partner with business stakeholders to translate requirements into data models that align with enterprise data standards.</li>
+            <li data-i18n="resume.exp1.b3">Troubleshoot advanced DAX, data, and performance issues to improve report reliability, query performance, and drive user adoption.</li>
+            <li data-i18n="resume.exp1.b4">Validate large datasets in Databricks and SQL to ensure data integrity and accuracy across enterprise reporting pipelines.</li>
+            <li data-i18n="resume.exp1.b5">Partner with data engineering and DevOps teams on version-controlled data transformations and production analytics solutions.</li>
+            <li data-i18n="resume.exp1.b6">Manage analytics delivery through Azure DevOps (Boards, sprints, pull requests), running multiple projects in parallel.</li>
+            <li data-i18n="resume.exp1.b7">Use AI tools (M365 Copilot, Cursor, Perplexity) to accelerate report development, DAX/SQL authoring, and documentation, and share patterns with the broader BI team.</li>
+            <li data-i18n="resume.exp1.b8">Enable self-service analytics by training business stakeholders, authoring documentation, and improving organizational data literacy.</li>
+          </ul>
+          <div class="tl-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Databricks</span><span class="tag">Azure DevOps</span><span class="tag">Semantic Modeling</span></div>
         </div>
-        <div>
-          <div class="skill-group">
-            <div class="skill-group__title" data-i18n="resume.skills.hr">HR & People Data</div>
-            <div class="skill-group__tags"><span class="tag">Workforce Analytics</span><span class="tag">Employee Lifecycle</span><span class="tag">Onboarding Metrics</span><span class="tag">DEI Reporting</span></div>
+
+        <div class="tl-row reveal">
+          <div class="tl-header">
+            <div class="tl-role" data-i18n="resume.exp2.role">IT Business Intelligence & Reporting Intern</div>
+            <div class="tl-date-inline">May 2024 – Aug 2024</div>
           </div>
-          <div class="skill-group">
-            <div class="skill-group__title" data-i18n="resume.skills.delivery">Delivery & Systems</div>
-            <div class="skill-group__tags"><span class="tag">Azure DevOps</span><span class="tag">Agile / Scrum</span><span class="tag">Data Validation</span><span class="tag">Requirements Gathering</span><span class="tag">Documentation</span></div>
-          </div>
+          <div class="tl-co">Williams Companies, Inc.</div>
+          <div class="tl-loc">Tulsa, OK</div>
+          <ul class="tl-bullets">
+            <li data-i18n="resume.exp2.b1">Built an enterprise Power BI dashboard delivering real-time visibility into IT project performance for executive leadership (CIO, IT directors, PMO).</li>
+            <li data-i18n="resume.exp2.b2">Designed and shipped an automated reporting solution that eliminated 100+ hours of manual work per month for the project management team.</li>
+            <li data-i18n="resume.exp2.b3">Integrated data from multiple source systems into a unified model, giving executives a single view of project performance.</li>
+            <li data-i18n="resume.exp2.b4">Designed KPI-driven visualizations to track project health, timelines, and performance against enterprise benchmarks.</li>
+            <li data-i18n="resume.exp2.b5">Led training sessions to help stakeholders adopt and use the new reporting tools.</li>
+            <li data-i18n="resume.exp2.b6">Worked with the PMO in Agile sprints to iteratively improve dashboard features.</li>
+          </ul>
+          <div class="tl-tags"><span class="tag">Power BI</span><span class="tag">KPI Design</span><span class="tag">Data Integration</span><span class="tag">Agile</span><span class="tag">Stakeholder Training</span></div>
         </div>
+
+        <div class="tl-row reveal">
+          <div class="tl-header">
+            <div class="tl-role" data-i18n="resume.exp3.role">HR Operations & Insights Intern</div>
+            <div class="tl-date-inline">Jan 2024 – May 2024</div>
+          </div>
+          <div class="tl-co">CBIZ</div>
+          <div class="tl-loc">Tulsa, OK</div>
+          <ul class="tl-bullets">
+            <li data-i18n="resume.exp3.b1">Supported HR operations and people analytics work, partnering with HR leadership to turn workforce data into recommendations on onboarding, engagement, and retention.</li>
+            <li data-i18n="resume.exp3.b2">Analyzed employee lifecycle data to identify gaps in onboarding and delivered recommendations that informed HR process improvements.</li>
+            <li data-i18n="resume.exp3.b3">Designed a structured 30/60/90-day touchpoint framework to improve new-hire engagement and early-tenure retention; presented to HR leadership for adoption.</li>
+            <li data-i18n="resume.exp3.b4">Contributed to strategic HR projects spanning DEI initiatives, policy revisions, and internal learning frameworks.</li>
+            <li data-i18n="resume.exp3.b5">Facilitated onboarding sessions and authored process documentation to improve new-hire experience and consistency across cohorts.</li>
+            <li data-i18n="resume.exp3.b6">Redesigned internal learning materials to improve usability and align with employee career-development pathways.</li>
+          </ul>
+          <div class="tl-tags"><span class="tag">People Analytics</span><span class="tag">DEI Reporting</span><span class="tag">Process Design</span><span class="tag">Onboarding</span></div>
+        </div>
+
+        <div class="tl-row reveal">
+          <div class="tl-header">
+            <div class="tl-role" data-i18n="resume.exp4.role">Business Analyst, Finance Operations</div>
+            <div class="tl-date-inline">2011 – 2015</div>
+          </div>
+          <div class="tl-co">Sintese Comercial Hospitalar</div>
+          <div class="tl-loc" data-i18n="resume.exp4.loc">Goiânia, Brazil</div>
+          <ul class="tl-bullets">
+            <li data-i18n="resume.exp4.b1">Served as business analyst across finance operations for a healthcare distribution company, owning data analysis, process automation, and system data integrity over a four-year tenure.</li>
+            <li data-i18n="resume.exp4.b2">Led data validation and cleansing during enterprise system implementation, improving data accuracy by 60% and ensuring reliable migration of master and transactional records.</li>
+            <li data-i18n="resume.exp4.b3">Automated financial reporting in advanced Excel, reducing report production time by 50% and creating reusable templates adopted across the finance team.</li>
+            <li data-i18n="resume.exp4.b4">Managed and analyzed $300K+ in monthly accounts receivable across five banks, reducing delinquency from 10% to 5% through trend analysis and process redesign.</li>
+            <li data-i18n="resume.exp4.b5">Partnered with cross-functional teams to define KPIs, design reporting standards, and improve financial reporting workflows.</li>
+            <li data-i18n="resume.exp4.b6">Delivered insights on cash flow, receivables, and customer behavior to support executive decision-making.</li>
+          </ul>
+          <div class="tl-tags"><span class="tag">Excel Automation</span><span class="tag">Accounts Receivable</span><span class="tag">Data Validation</span><span class="tag">KPI Design</span><span class="tag">System Migration</span></div>
+        </div>
+
       </div>
     </section>
 
@@ -163,25 +184,27 @@
     <!-- EDUCATION -->
     <section class="reveal">
       <span class="eyebrow" data-i18n="resume.edu.eyebrow">Education</span>
-      <h2 style="margin-bottom:1.5rem" data-i18n="resume.edu.title">Oklahoma State University.</h2>
-      <div class="edu-grid">
-        <div class="edu-card edu-card--active">
-          <div class="edu-deg" data-i18n="resume.edu.ms.deg">M.S. Business Analytics & Data Science</div>
-          <div class="edu-school" data-i18n="resume.edu.ms.school">Oklahoma State University</div>
-          <div class="edu-meta" data-i18n="resume.edu.ms.meta">Stillwater, OK · Spears School of Business</div>
-          <span class="edu-status edu-status--active" data-i18n="resume.edu.ms.status">In progress · Expected Dec 2026</span>
+      <div class="tl">
+        <div class="tl-row" style="padding-bottom:1.5rem">
+          <div class="tl-header">
+            <div class="tl-role" data-i18n="resume.edu.ms.deg">M.S., Business Analytics & Data Science</div>
+            <div class="tl-date-inline" data-i18n="resume.edu.ms.status">In progress · Expected Dec 2026</div>
+          </div>
+          <div class="tl-co" data-i18n="resume.edu.ms.school">Oklahoma State University, Stillwater, OK</div>
         </div>
-        <div class="edu-card">
-          <div class="edu-deg" data-i18n="resume.edu.bs.deg">B.S. Management Information Systems</div>
-          <div class="edu-school" data-i18n="resume.edu.bs.school">Oklahoma State University</div>
-          <div class="edu-meta" data-i18n="resume.edu.bs.meta">Stillwater, OK · 2020 – 2024</div>
-          <span class="edu-status edu-status--done" data-i18n="resume.edu.bs.status">Completed · 2024</span>
+        <div class="tl-row" style="padding-bottom:0">
+          <div class="tl-header">
+            <div class="tl-role" data-i18n="resume.edu.bs.deg">B.S., Management Information Systems</div>
+            <div class="tl-date-inline" data-i18n="resume.edu.bs.meta">2020 – 2024</div>
+          </div>
+          <div class="tl-co" data-i18n="resume.edu.bs.school">Oklahoma State University, Stillwater, OK</div>
         </div>
       </div>
     </section>
 
     <hr/>
 
+    <!-- LANGUAGES -->
     <section class="reveal" style="padding-bottom:1rem">
       <span class="eyebrow" data-i18n="resume.lang.eyebrow">Languages</span>
       <div style="display:flex;gap:2.5rem;margin-top:1rem">
@@ -236,52 +259,55 @@ const translations = {
     'nav.projects': 'Projects',
     'nav.contact': 'Contact',
     'resume.name': 'Cecilia Thompson',
-    'resume.tagline': 'Business Intelligence & Analytics · Tulsa, OK',
+    'resume.tagline': 'Business Intelligence & Analytics | Power BI · SQL · Databricks',
     'resume.cta': 'Get in touch',
-    'resume.lead': 'Data analyst and BI professional with 5+ years turning business and operational data into dashboards, reports, and actionable insights. Skilled in Power BI, SQL, Databricks, and data modeling. Currently pursuing a Master\'s in Business Analytics & Data Science at Oklahoma State, expected December 2026.',
-    'resume.exp.eyebrow': 'Experience',
-    'resume.exp1.badge': 'Current',
+    'resume.summary.eyebrow': 'Professional Summary',
+    'resume.lead': 'Data analyst and business intelligence professional with 5+ years of experience turning business and operational data into dashboards, reports, and actionable insights. Skilled in SQL, Power BI, Databricks, advanced Excel, and data modeling, with a strong background in data validation, automation, and executive reporting. Known for translating complex datasets into clear recommendations that improve decision-making, efficiency, and performance. Currently pursuing a Master\'s in Business Analytics & Data Science at Oklahoma State, expected December 2026.',
+    'resume.skills.eyebrow': 'Core Competencies',
+    'resume.skills.bi': 'BI & Analytics',
+    'resume.skills.ai': 'AI-Assisted Development',
+    'resume.skills.systems': 'Systems & Delivery',
+    'resume.skills.stakeholder': 'Stakeholder & Communication',
+    'resume.exp.eyebrow': 'Professional Experience',
     'resume.exp1.role': 'IT Business Intelligence & Reporting',
     'resume.exp1.loc': 'Fortune 500 Energy Infrastructure · Tulsa, OK',
     'resume.exp1.b1': 'Lead development of enterprise Power BI dashboards and semantic data models used by leaders across IT, operations, and finance.',
-    'resume.exp1.b2': 'Partner with business stakeholders to translate requirements into data models aligned with enterprise data standards.',
-    'resume.exp1.b3': 'Troubleshoot advanced DAX, data, and performance issues to improve report reliability, query performance, and end-user adoption.',
-    'resume.exp1.b4': 'Validate large datasets in Databricks and SQL to ensure data integrity across enterprise reporting pipelines.',
-    'resume.exp1.b5': 'Manage analytics delivery through Azure DevOps (Boards, sprints, pull requests), running multiple projects in parallel.',
-    'resume.exp1.b6': 'Use AI tools (M365 Copilot, Cursor, Perplexity) to accelerate development and share patterns with the broader BI team.',
-    'resume.exp1.b7': 'Enable self-service analytics through stakeholder training and improved organizational data literacy.',
-    'resume.exp2.badge': 'Internship',
+    'resume.exp1.b2': 'Partner with business stakeholders to translate requirements into data models that align with enterprise data standards.',
+    'resume.exp1.b3': 'Troubleshoot advanced DAX, data, and performance issues to improve report reliability, query performance, and drive user adoption.',
+    'resume.exp1.b4': 'Validate large datasets in Databricks and SQL to ensure data integrity and accuracy across enterprise reporting pipelines.',
+    'resume.exp1.b5': 'Partner with data engineering and DevOps teams on version-controlled data transformations and production analytics solutions.',
+    'resume.exp1.b6': 'Manage analytics delivery through Azure DevOps (Boards, sprints, pull requests), running multiple projects in parallel.',
+    'resume.exp1.b7': 'Use AI tools (M365 Copilot, Cursor, Perplexity) to accelerate report development, DAX/SQL authoring, and documentation, and share patterns with the broader BI team.',
+    'resume.exp1.b8': 'Enable self-service analytics by training business stakeholders, authoring documentation, and improving organizational data literacy.',
     'resume.exp2.role': 'IT Business Intelligence & Reporting Intern',
-    'resume.exp2.b1': 'Built an enterprise Power BI dashboard delivering real-time IT project performance visibility to executive leadership (CIO, IT directors, PMO).',
-    'resume.exp2.b2': 'Designed an automated reporting solution that eliminated 100+ hours of manual work per month for the project management team.',
-    'resume.exp2.b3': 'Integrated data from multiple source systems into a unified model — single source of truth for executive project performance.',
+    'resume.exp2.b1': 'Built an enterprise Power BI dashboard delivering real-time visibility into IT project performance for executive leadership (CIO, IT directors, PMO).',
+    'resume.exp2.b2': 'Designed and shipped an automated reporting solution that eliminated 100+ hours of manual work per month for the project management team.',
+    'resume.exp2.b3': 'Integrated data from multiple source systems into a unified model, giving executives a single view of project performance.',
     'resume.exp2.b4': 'Designed KPI-driven visualizations to track project health, timelines, and performance against enterprise benchmarks.',
-    'resume.exp3.badge': 'Internship',
+    'resume.exp2.b5': 'Led training sessions to help stakeholders adopt and use the new reporting tools.',
+    'resume.exp2.b6': 'Worked with the PMO in Agile sprints to iteratively improve dashboard features.',
     'resume.exp3.role': 'HR Operations & Insights Intern',
-    'resume.exp3.b1': 'Analyzed employee lifecycle data to identify onboarding gaps and delivered recommendations that informed HR process improvements.',
-    'resume.exp3.b2': 'Designed a 30/60/90-day touchpoint framework to improve new-hire engagement and early-tenure retention; presented to HR leadership.',
-    'resume.exp3.b3': 'Contributed to DEI initiatives, policy revisions, and internal learning frameworks.',
+    'resume.exp3.b1': 'Supported HR operations and people analytics work, partnering with HR leadership to turn workforce data into recommendations on onboarding, engagement, and retention.',
+    'resume.exp3.b2': 'Analyzed employee lifecycle data to identify gaps in onboarding and delivered recommendations that informed HR process improvements.',
+    'resume.exp3.b3': 'Designed a structured 30/60/90-day touchpoint framework to improve new-hire engagement and early-tenure retention; presented to HR leadership for adoption.',
+    'resume.exp3.b4': 'Contributed to strategic HR projects spanning DEI initiatives, policy revisions, and internal learning frameworks.',
+    'resume.exp3.b5': 'Facilitated onboarding sessions and authored process documentation to improve new-hire experience and consistency across cohorts.',
+    'resume.exp3.b6': 'Redesigned internal learning materials to improve usability and align with employee career-development pathways.',
     'resume.exp4.role': 'Business Analyst, Finance Operations',
     'resume.exp4.loc': 'Goiânia, Brazil',
-    'resume.exp4.b1': 'Led data validation and cleansing during enterprise system implementation — improved data accuracy by 60%.',
-    'resume.exp4.b2': 'Automated financial reporting in advanced Excel, reducing production time by 50% with templates adopted across the finance team.',
-    'resume.exp4.b3': 'Managed and analyzed $300K+ in monthly accounts receivable, reducing delinquency from 10% to 5% through trend analysis and process redesign.',
-    'resume.skills.eyebrow': 'Skills',
-    'resume.skills.title': 'Core competencies.',
-    'resume.skills.bi': 'BI & Analytics',
-    'resume.skills.ai': 'AI-Assisted Development',
-    'resume.skills.hr': 'HR & People Data',
-    'resume.skills.delivery': 'Delivery & Systems',
+    'resume.exp4.b1': 'Served as business analyst across finance operations for a healthcare distribution company, owning data analysis, process automation, and system data integrity over a four-year tenure.',
+    'resume.exp4.b2': 'Led data validation and cleansing during enterprise system implementation, improving data accuracy by 60% and ensuring reliable migration of master and transactional records.',
+    'resume.exp4.b3': 'Automated financial reporting in advanced Excel, reducing report production time by 50% and creating reusable templates adopted across the finance team.',
+    'resume.exp4.b4': 'Managed and analyzed $300K+ in monthly accounts receivable across five banks, reducing delinquency from 10% to 5% through trend analysis and process redesign.',
+    'resume.exp4.b5': 'Partnered with cross-functional teams to define KPIs, design reporting standards, and improve financial reporting workflows.',
+    'resume.exp4.b6': 'Delivered insights on cash flow, receivables, and customer behavior to support executive decision-making.',
     'resume.edu.eyebrow': 'Education',
-    'resume.edu.title': 'Oklahoma State University.',
-    'resume.edu.ms.deg': 'M.S. Business Analytics & Data Science',
-    'resume.edu.ms.school': 'Oklahoma State University',
-    'resume.edu.ms.meta': 'Stillwater, OK · Spears School of Business',
+    'resume.edu.ms.deg': 'M.S., Business Analytics & Data Science',
+    'resume.edu.ms.school': 'Oklahoma State University, Stillwater, OK',
     'resume.edu.ms.status': 'In progress · Expected Dec 2026',
-    'resume.edu.bs.deg': 'B.S. Management Information Systems',
-    'resume.edu.bs.school': 'Oklahoma State University',
-    'resume.edu.bs.meta': 'Stillwater, OK · 2020 – 2024',
-    'resume.edu.bs.status': 'Completed · 2024',
+    'resume.edu.bs.deg': 'B.S., Management Information Systems',
+    'resume.edu.bs.school': 'Oklahoma State University, Stillwater, OK',
+    'resume.edu.bs.meta': '2020 – 2024',
     'resume.lang.eyebrow': 'Languages',
     'resume.lang.en': 'English',
     'resume.lang.en.level': 'Native / Professional',
@@ -298,52 +324,55 @@ const translations = {
     'nav.projects': 'Projetos',
     'nav.contact': 'Contato',
     'resume.name': 'Cecilia Thompson',
-    'resume.tagline': 'Business Intelligence & Analytics · Tulsa, OK',
+    'resume.tagline': 'Business Intelligence & Analytics | Power BI · SQL · Databricks',
     'resume.cta': 'Entre em contato',
-    'resume.lead': 'Analista de dados e profissional de BI com mais de 5 anos transformando dados empresariais e operacionais em dashboards, relatórios e insights acionáveis. Especializada em Power BI, SQL, Databricks e modelagem de dados. Atualmente cursando mestrado em Business Analytics & Data Science na Oklahoma State, com conclusão prevista para dezembro de 2026.',
-    'resume.exp.eyebrow': 'Experiência',
-    'resume.exp1.badge': 'Atual',
+    'resume.summary.eyebrow': 'Resumo Profissional',
+    'resume.lead': 'Analista de dados e profissional de business intelligence com mais de 5 anos de experiência transformando dados empresariais e operacionais em dashboards, relatórios e insights acionáveis. Especializada em SQL, Power BI, Databricks, Excel avançado e modelagem de dados, com sólida experiência em validação de dados, automação e relatórios executivos. Reconhecida por traduzir datasets complexos em recomendações claras que melhoram a tomada de decisão, eficiência e desempenho. Atualmente cursando mestrado em Business Analytics & Data Science na Oklahoma State, com conclusão prevista para dezembro de 2026.',
+    'resume.skills.eyebrow': 'Competências Principais',
+    'resume.skills.bi': 'BI & Analytics',
+    'resume.skills.ai': 'Desenvolvimento com IA',
+    'resume.skills.systems': 'Sistemas & Entrega',
+    'resume.skills.stakeholder': 'Stakeholders & Comunicação',
+    'resume.exp.eyebrow': 'Experiência Profissional',
     'resume.exp1.role': 'IT Business Intelligence & Reporting',
     'resume.exp1.loc': 'Infraestrutura Energética Fortune 500 · Tulsa, OK',
     'resume.exp1.b1': 'Lidero o desenvolvimento de dashboards Power BI empresariais e modelos semânticos de dados utilizados por líderes de TI, operações e finanças.',
     'resume.exp1.b2': 'Colaboro com stakeholders de negócio para traduzir requisitos em modelos de dados alinhados aos padrões empresariais.',
-    'resume.exp1.b3': 'Resolvo problemas avançados de DAX, dados e performance para melhorar a confiabilidade dos relatórios, performance de consultas e adoção pelos usuários.',
-    'resume.exp1.b4': 'Valido grandes conjuntos de dados no Databricks e SQL para garantir a integridade dos dados em pipelines de relatórios empresariais.',
-    'resume.exp1.b5': 'Gerencio a entrega de analytics através do Azure DevOps (Boards, sprints, pull requests), conduzindo múltiplos projetos em paralelo.',
-    'resume.exp1.b6': 'Utilizo ferramentas de IA (M365 Copilot, Cursor, Perplexity) para acelerar o desenvolvimento e compartilhar padrões com a equipe de BI.',
-    'resume.exp1.b7': 'Viabilizo analytics de autoatendimento através de treinamento de stakeholders e melhoria da alfabetização de dados organizacional.',
-    'resume.exp2.badge': 'Estágio',
+    'resume.exp1.b3': 'Resolvo problemas avançados de DAX, dados e performance para melhorar a confiabilidade dos relatórios, performance de consultas e impulsionar a adoção pelos usuários.',
+    'resume.exp1.b4': 'Valido grandes conjuntos de dados no Databricks e SQL para garantir a integridade e precisão dos dados em pipelines de relatórios empresariais.',
+    'resume.exp1.b5': 'Colaboro com equipes de engenharia de dados e DevOps em transformações de dados versionadas e soluções de analytics em produção.',
+    'resume.exp1.b6': 'Gerencio a entrega de analytics através do Azure DevOps (Boards, sprints, pull requests), conduzindo múltiplos projetos em paralelo.',
+    'resume.exp1.b7': 'Utilizo ferramentas de IA (M365 Copilot, Cursor, Perplexity) para acelerar o desenvolvimento de relatórios, criação de DAX/SQL e documentação, e compartilho padrões com a equipe de BI.',
+    'resume.exp1.b8': 'Viabilizo analytics de autoatendimento treinando stakeholders, criando documentação e melhorando a alfabetização de dados organizacional.',
     'resume.exp2.role': 'Estagiária de IT Business Intelligence & Reporting',
     'resume.exp2.b1': 'Construí um dashboard Power BI empresarial entregando visibilidade em tempo real do desempenho de projetos de TI para a liderança executiva (CIO, diretores de TI, PMO).',
-    'resume.exp2.b2': 'Projetei uma solução de relatórios automatizada que eliminou mais de 100 horas de trabalho manual por mês para a equipe de gerenciamento de projetos.',
-    'resume.exp2.b3': 'Integrei dados de múltiplos sistemas em um modelo unificado — fonte única de verdade para o desempenho executivo de projetos.',
+    'resume.exp2.b2': 'Projetei e entreguei uma solução de relatórios automatizada que eliminou mais de 100 horas de trabalho manual por mês para a equipe de gerenciamento de projetos.',
+    'resume.exp2.b3': 'Integrei dados de múltiplos sistemas em um modelo unificado, dando aos executivos uma visão única do desempenho dos projetos.',
     'resume.exp2.b4': 'Projetei visualizações orientadas por KPIs para acompanhar a saúde dos projetos, cronogramas e desempenho em relação a benchmarks empresariais.',
-    'resume.exp3.badge': 'Estágio',
+    'resume.exp2.b5': 'Conduzi sessões de treinamento para ajudar stakeholders a adotar e usar as novas ferramentas de relatórios.',
+    'resume.exp2.b6': 'Trabalhei com o PMO em sprints Agile para melhorar iterativamente os recursos do dashboard.',
     'resume.exp3.role': 'Estagiária de HR Operations & Insights',
-    'resume.exp3.b1': 'Analisei dados do ciclo de vida dos funcionários para identificar lacunas no onboarding e entreguei recomendações que informaram melhorias nos processos de RH.',
-    'resume.exp3.b2': 'Projetei um framework de pontos de contato de 30/60/90 dias para melhorar o engajamento de novos funcionários e retenção; apresentei à liderança de RH.',
-    'resume.exp3.b3': 'Contribuí para iniciativas de DEI, revisões de políticas e frameworks de aprendizado internos.',
+    'resume.exp3.b1': 'Apoiei operações de RH e trabalho de people analytics, colaborando com a liderança de RH para transformar dados de força de trabalho em recomendações sobre onboarding, engajamento e retenção.',
+    'resume.exp3.b2': 'Analisei dados do ciclo de vida dos funcionários para identificar lacunas no onboarding e entreguei recomendações que informaram melhorias nos processos de RH.',
+    'resume.exp3.b3': 'Projetei um framework estruturado de pontos de contato de 30/60/90 dias para melhorar o engajamento de novos funcionários e retenção; apresentei à liderança de RH para adoção.',
+    'resume.exp3.b4': 'Contribuí para projetos estratégicos de RH abrangendo iniciativas de DEI, revisões de políticas e frameworks de aprendizado internos.',
+    'resume.exp3.b5': 'Facilitei sessões de onboarding e criei documentação de processos para melhorar a experiência e consistência entre turmas.',
+    'resume.exp3.b6': 'Redesenhei materiais de aprendizado internos para melhorar a usabilidade e alinhar com trilhas de desenvolvimento de carreira.',
     'resume.exp4.role': 'Analista de Negócios, Operações Financeiras',
     'resume.exp4.loc': 'Goiânia, Brasil',
-    'resume.exp4.b1': 'Liderei validação e limpeza de dados durante implementação de sistema empresarial — melhorei a precisão dos dados em 60%.',
-    'resume.exp4.b2': 'Automatizei relatórios financeiros em Excel avançado, reduzindo o tempo de produção em 50% com templates adotados pela equipe financeira.',
-    'resume.exp4.b3': 'Gerenciei e analisei mais de R$1,5M em contas a receber mensais, reduzindo a inadimplência de 10% para 5% através de análise de tendências e redesign de processos.',
-    'resume.skills.eyebrow': 'Habilidades',
-    'resume.skills.title': 'Competências principais.',
-    'resume.skills.bi': 'BI & Analytics',
-    'resume.skills.ai': 'Desenvolvimento com IA',
-    'resume.skills.hr': 'RH & Dados de Pessoas',
-    'resume.skills.delivery': 'Entrega & Sistemas',
+    'resume.exp4.b1': 'Atuei como analista de negócios em operações financeiras de uma distribuidora de produtos hospitalares, responsável por análise de dados, automação de processos e integridade de dados do sistema ao longo de quatro anos.',
+    'resume.exp4.b2': 'Liderei validação e limpeza de dados durante implementação de sistema empresarial, melhorando a precisão dos dados em 60% e garantindo migração confiável de registros mestres e transacionais.',
+    'resume.exp4.b3': 'Automatizei relatórios financeiros em Excel avançado, reduzindo o tempo de produção em 50% e criando templates reutilizáveis adotados pela equipe financeira.',
+    'resume.exp4.b4': 'Gerenciei e analisei mais de R$1,5M em contas a receber mensais em cinco bancos, reduzindo a inadimplência de 10% para 5% através de análise de tendências e redesign de processos.',
+    'resume.exp4.b5': 'Colaborei com equipes multifuncionais para definir KPIs, projetar padrões de relatórios e melhorar fluxos de trabalho de relatórios financeiros.',
+    'resume.exp4.b6': 'Entreguei insights sobre fluxo de caixa, recebíveis e comportamento do cliente para apoiar a tomada de decisão executiva.',
     'resume.edu.eyebrow': 'Educação',
-    'resume.edu.title': 'Oklahoma State University.',
-    'resume.edu.ms.deg': 'M.S. Business Analytics & Data Science',
-    'resume.edu.ms.school': 'Oklahoma State University',
-    'resume.edu.ms.meta': 'Stillwater, OK · Spears School of Business',
+    'resume.edu.ms.deg': 'M.S., Business Analytics & Data Science',
+    'resume.edu.ms.school': 'Oklahoma State University, Stillwater, OK',
     'resume.edu.ms.status': 'Em andamento · Previsão Dez 2026',
-    'resume.edu.bs.deg': 'B.S. Management Information Systems',
-    'resume.edu.bs.school': 'Oklahoma State University',
-    'resume.edu.bs.meta': 'Stillwater, OK · 2020 – 2024',
-    'resume.edu.bs.status': 'Concluído · 2024',
+    'resume.edu.bs.deg': 'B.S., Management Information Systems',
+    'resume.edu.bs.school': 'Oklahoma State University, Stillwater, OK',
+    'resume.edu.bs.meta': '2020 – 2024',
     'resume.lang.eyebrow': 'Idiomas',
     'resume.lang.en': 'Inglês',
     'resume.lang.en.level': 'Nativo / Profissional',
