@@ -24,16 +24,18 @@
     .pc:hover .pc__title { color: var(--accent); }
     .pc:hover .pc__arrow { color: var(--accent); }
 
-    .pc__top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem; }
+    .pc__icon-wrap { display: flex; justify-content: center; margin-bottom: 1.25rem; }
     .pc__icon {
-      width: 2.5rem; height: 2.5rem; border-radius: 10px;
+      width: 3.2rem; height: 3.2rem; border-radius: 12px;
       background: var(--accent-faint); border: 1px solid rgba(232,112,154,0.2);
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; transition: all 0.25s ease;
+      font-size: 1.4rem; transition: all 0.25s ease;
     }
-    .pc__arrow { color: var(--text-faint); font-size: 1rem; font-weight: 900; transform: rotate(-45deg); transition: all 0.2s ease; }
+    .pc__year { position: absolute; top: 1rem; right: 1.25rem; font-family: var(--mono); font-size: 0.62rem; color: var(--text-faint); letter-spacing: 0.04em; }
+    .pc__cat-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; }
+    .pc__arrow { color: var(--text-faint); font-size: 1.1rem; font-weight: 900; transform: rotate(-45deg); transition: all 0.2s ease; }
 
-    .pc__cat { font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 0.5rem; }
+    .pc__cat { font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); }
     .pc__title { font-size: 0.88rem; font-weight: 700; color: var(--text); line-height: 1.35; margin-bottom: 0.35rem; transition: color 0.2s ease; }
     .pc__kicker { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.6rem; line-height: 1.45; }
     .pc__desc { font-size: 0.72rem; color: var(--text-faint); line-height: 1.55; margin-bottom: 0.85rem; flex: 1;
@@ -111,11 +113,12 @@
       <div class="pg">
 
         <div class="pc reveal" onclick="showDetail(0)">
-          <div class="pc__top">
-            <div class="pc__icon">🔍</div>
+          <div class="pc__year">2026</div>
+          <div class="pc__icon-wrap"><div class="pc__icon">🔍</div></div>
+          <div class="pc__cat-row">
+            <div class="pc__cat" data-i18n="proj.card7.cat">Analytics Platform</div>
             <span class="pc__arrow">→</span>
           </div>
-          <div class="pc__cat" data-i18n="proj.card7.cat">Analytics Platform</div>
           <div class="pc__title" data-i18n="proj.card7.title">Analytics Front Door (Discovery Hub)</div>
           <div class="pc__kicker" data-i18n="proj.card7.kicker">Metadata-driven discovery for 14,000+ BI assets</div>
           <div class="pc__desc" data-i18n="proj.card7.desc">Designed a scalable analytics discovery framework to help users find and reuse existing Power BI reports and semantic models.</div>
@@ -123,11 +126,12 @@
         </div>
 
         <div class="pc reveal" onclick="showDetail(1)">
-          <div class="pc__top">
-            <div class="pc__icon">📋</div>
+          <div class="pc__year">2025</div>
+          <div class="pc__icon-wrap"><div class="pc__icon">📋</div></div>
+          <div class="pc__cat-row">
+            <div class="pc__cat" data-i18n="proj.card8.cat">Project Tracking</div>
             <span class="pc__arrow">→</span>
           </div>
-          <div class="pc__cat" data-i18n="proj.card8.cat">Project Tracking</div>
           <div class="pc__title" data-i18n="proj.card8.title">Delivery Management Center (DMC)</div>
           <div class="pc__kicker" data-i18n="proj.card8.kicker">Enterprise IT project tracking & portfolio visibility</div>
           <div class="pc__desc" data-i18n="proj.card8.desc">Built a Power BI solution for real-time IT project health, financials, and delivery status during ServiceNow to Ivanti migration.</div>
@@ -135,11 +139,12 @@
         </div>
 
         <div class="pc reveal" onclick="showDetail(2)">
-          <div class="pc__top">
-            <div class="pc__icon">🔄</div>
+          <div class="pc__year">2024</div>
+          <div class="pc__icon-wrap"><div class="pc__icon">🔄</div></div>
+          <div class="pc__cat-row">
+            <div class="pc__cat" data-i18n="proj.card9.cat">Data Integration</div>
             <span class="pc__arrow">→</span>
           </div>
-          <div class="pc__cat" data-i18n="proj.card9.cat">Data Integration</div>
           <div class="pc__title" data-i18n="proj.card9.title">Business Transformation Dashboard</div>
           <div class="pc__kicker" data-i18n="proj.card9.kicker">Cross-system enterprise initiative tracking</div>
           <div class="pc__desc" data-i18n="proj.card9.desc">Consolidated four disparate data sources into a unified Power BI platform for tracking business transformation initiatives.</div>
@@ -147,11 +152,12 @@
         </div>
 
         <div class="pc reveal" onclick="showDetail(3)">
-          <div class="pc__top">
-            <div class="pc__icon">💰</div>
+          <div class="pc__year">2011–15</div>
+          <div class="pc__icon-wrap"><div class="pc__icon">💰</div></div>
+          <div class="pc__cat-row">
+            <div class="pc__cat" data-i18n="proj.card6.cat">Finance Operations</div>
             <span class="pc__arrow">→</span>
           </div>
-          <div class="pc__cat" data-i18n="proj.card6.cat">Finance Operations</div>
           <div class="pc__title" data-i18n="proj.card6.title">Finance Operations Transformation</div>
           <div class="pc__kicker" data-i18n="proj.card6.kicker">Finance automation, AR optimization & data integrity</div>
           <div class="pc__desc" data-i18n="proj.card6.desc">Led finance operations analytics, AR optimization, and reporting automation at Sintese Comercial Hospitalar in Brazil.</div>
