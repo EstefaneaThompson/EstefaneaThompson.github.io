@@ -553,11 +553,14 @@ hr {
   line-height: 1.65;
 }
 .tl-bullets li::before {
-  content: '—';
+  content: '';
   position: absolute;
-  left: 0;
-  color: var(--text-faint);
-  font-size: 0.75rem;
+  left: 0.15rem;
+  top: 0.55rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-faint);
 }
 .tl-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.85rem; }
 @media (max-width: 500px) {
