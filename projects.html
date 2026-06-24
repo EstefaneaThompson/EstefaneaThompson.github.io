@@ -180,7 +180,7 @@
 
     <!-- DETAIL VIEW -->
     <div id="detail-view" class="detail">
-      <button class="detail__back" onclick="hideDetail()">← Back to projects</button>
+      <button class="detail__back" onclick="history.back()">← Back to projects</button>
       <div class="detail__header">
         <div class="detail__cat" id="d-cat"></div>
         <div class="detail__title" id="d-title"></div>
@@ -284,7 +284,7 @@ var projects = [
   }
 ];
 
-function showDetail(i) {
+function renderDetail(i) {
   var p = projects[i];
   document.getElementById('d-cat').textContent = p.cat;
   document.getElementById('d-title').textContent = p.title;
@@ -300,9 +300,13 @@ function showDetail(i) {
   var tEl = document.getElementById('d-tags');
   tEl.innerHTML = p.tags.map(function(t){ return '<span class="tag">'+t+'</span>'; }).join('');
   document.getElementById('grid-view').style.display = 'none';
-  var dv = document.getElementById('detail-view');
-  dv.classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('detail-view').classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function showDetail(i) {
+  history.pushState({project: i}, '', '#project-' + i);
+  renderDetail(i);
 }
 
 function hideDetail() {
@@ -310,6 +314,25 @@ function hideDetail() {
   document.getElementById('grid-view').style.display = '';
   window.scrollTo(0,0);
 }
+
+window.addEventListener('popstate', function(e) {
+  if (e.state && typeof e.state.project === 'number') {
+    renderDetail(e.state.project);
+  } else {
+    hideDetail();
+  }
+});
+
+// Handle direct links with hash (e.g. #project-0)
+(function() {
+  var hash = window.location.hash;
+  if (hash && hash.startsWith('#project-')) {
+    var i = parseInt(hash.replace('#project-', ''), 10);
+    if (!isNaN(i) && i >= 0 && i < projects.length) {
+      renderDetail(i);
+    }
+  }
+})();
 </script>
 <script>
 const translations = {
