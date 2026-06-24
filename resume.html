@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="style.css?v=8" />
   <style>
     .tl { position: relative; padding-left: 2rem; }
     .tl::before { content: ''; position: absolute; left: 5px; top: 0; bottom: 0; width: 2px; background: var(--border); }
@@ -17,7 +17,7 @@
     .tl-row::before { content: ''; position: absolute; left: -2rem; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); z-index: 1; }
     .tl-row:first-child::before { width: 14px; height: 14px; left: calc(-2rem - 1px); box-shadow: 0 0 0 3px var(--accent-faint); }
     .tl-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.15rem; }
-    .tl-date-inline { font-family: var(--mono); font-size: 0.72rem; color: var(--text-faint); white-space: nowrap; }
+    .tl-date-inline { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -58,44 +58,6 @@
       </div>
     </div>
 
-    <hr/>
-
-    <!-- PROFESSIONAL SUMMARY -->
-    <section class="reveal">
-      <span class="eyebrow" data-i18n="resume.summary.eyebrow">Professional Summary</span>
-      <p class="prose" data-i18n="resume.lead">Data analyst and business intelligence professional with 5+ years of experience turning business and operational data into dashboards, reports, and actionable insights. Skilled in SQL, Power BI, Databricks, advanced Excel, and data modeling, with a strong background in data validation, automation, and executive reporting. Known for translating complex datasets into clear recommendations that improve decision-making, efficiency, and performance. Currently pursuing a Master's in Business Analytics & Data Science at Oklahoma State, expected December 2026.</p>
-    </section>
-
-    <hr/>
-
-    <!-- CORE COMPETENCIES -->
-    <section class="reveal">
-      <span class="eyebrow" data-i18n="resume.skills.eyebrow">Core Competencies</span>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;margin-top:0.5rem">
-        <div>
-          <div class="skill-group">
-            <div class="skill-group__title" data-i18n="resume.skills.bi">BI & Analytics</div>
-            <div class="skill-group__tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Semantic Modeling</span><span class="tag">SQL</span><span class="tag">Databricks</span><span class="tag">Advanced Excel</span><span class="tag">Data Modeling</span><span class="tag">Performance Optimization</span></div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group__title" data-i18n="resume.skills.ai">AI-Assisted Development</div>
-            <div class="skill-group__tags"><span class="tag">M365 Copilot</span><span class="tag">Cursor</span><span class="tag">Perplexity</span></div>
-          </div>
-        </div>
-        <div>
-          <div class="skill-group">
-            <div class="skill-group__title" data-i18n="resume.skills.systems">Systems & Delivery</div>
-            <div class="skill-group__tags"><span class="tag">Azure DevOps</span><span class="tag">Agile / Scrum</span><span class="tag">Data Validation</span><span class="tag">Requirements Gathering</span><span class="tag">Documentation</span><span class="tag">Enterprise System Implementation</span></div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group__title" data-i18n="resume.skills.stakeholder">Stakeholder & Communication</div>
-            <div class="skill-group__tags"><span class="tag">Executive Reporting</span><span class="tag">Stakeholder Training</span><span class="tag">Cross-Functional Partnership</span><span class="tag">Bilingual (EN / PT)</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr/>
 
     <!-- EXPERIENCE -->
     <section>
