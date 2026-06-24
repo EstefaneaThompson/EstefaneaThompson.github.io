@@ -27,8 +27,13 @@
     .pc__icon-wrap {
       display: flex; justify-content: center; padding: 1.5rem 0;
       margin: -1.5rem -1.5rem 1.25rem -1.5rem;
-      background: linear-gradient(180deg, var(--accent-faint) 0%, transparent 100%);
+      background:
+        linear-gradient(180deg, var(--accent-faint) 0%, transparent 100%),
+        linear-gradient(var(--border-soft) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
+      background-size: 100% 100%, 20px 20px, 20px 20px;
       border-radius: 13px 13px 0 0;
+      border-bottom: 1px solid var(--border);
     }
     .pc__icon {
       width: 3.5rem; height: 3.5rem; border-radius: 14px;
@@ -37,7 +42,7 @@
       font-size: 1.5rem; transition: all 0.25s ease;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .pc__year { position: absolute; top: 1rem; right: 1.25rem; font-family: var(--mono); font-size: 0.62rem; color: var(--text-faint); letter-spacing: 0.04em; }
+    .pc__year { position: absolute; top: 1rem; right: 1.25rem; font-family: var(--mono); font-size: 0.65rem; color: var(--text); font-weight: 600; letter-spacing: 0.04em; }
     .pc__cat-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; }
     .pc__arrow { color: var(--text-faint); font-size: 1.1rem; font-weight: 900; transform: rotate(-45deg); transition: all 0.2s ease; }
 
