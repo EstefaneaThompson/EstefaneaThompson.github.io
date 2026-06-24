@@ -8,7 +8,54 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=9" />
+  <style>
+    .pc-grid { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2.5rem; }
+    .pc {
+      display: flex; align-items: flex-start; gap: 1.5rem;
+      padding: 1.75rem; background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 12px; cursor: pointer; transition: all 0.25s ease;
+      text-decoration: none; color: inherit; position: relative;
+    }
+    .pc:hover { background: var(--bg3); border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,112,154,0.08); }
+    .pc:hover .pc__title { color: var(--accent); }
+    .pc:hover .pc__arrow { color: var(--accent); transform: translate(2px, -2px); }
+    .pc__body { flex: 1; min-width: 0; }
+    .pc__cat { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.6rem; }
+    .pc__title { font-size: 1.05rem; font-weight: 700; color: var(--text); line-height: 1.35; margin-bottom: 0.3rem; transition: color 0.2s ease; }
+    .pc__kicker { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.75rem; line-height: 1.5; }
+    .pc__desc { font-size: 0.82rem; color: var(--text-faint); line-height: 1.65; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .pc__tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .pc__arrow { flex-shrink: 0; color: var(--text-faint); font-size: 1.2rem; font-weight: 900; margin-top: 0.2rem; transition: all 0.2s ease; transform: rotate(-45deg); }
+    @media (max-width: 480px) { .pc { padding: 1.25rem; gap: 1rem; } }
+
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      display: none; align-items: center; justify-content: center;
+      padding: 2rem; opacity: 0; transition: opacity 0.3s ease;
+    }
+    .modal-overlay.active { display: flex; opacity: 1; }
+    .modal {
+      background: var(--bg2); border: 1px solid var(--border); border-radius: 16px;
+      max-width: 700px; width: 100%; max-height: 85vh; overflow-y: auto;
+      padding: 2.5rem; position: relative;
+      animation: modalIn 0.3s ease;
+    }
+    @keyframes modalIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+    .modal__close {
+      position: absolute; top: 1.25rem; right: 1.25rem; width: 2rem; height: 2rem;
+      border-radius: 50%; background: var(--bg3); border: 1px solid var(--border);
+      color: var(--text-muted); font-size: 1rem; display: flex; align-items: center;
+      justify-content: center; cursor: pointer; transition: all 0.15s ease;
+    }
+    .modal__close:hover { background: var(--accent-faint); border-color: var(--accent); color: var(--accent); }
+    .modal__cat { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.75rem; }
+    .modal__title { font-family: var(--display); font-size: 1.5rem; font-weight: 700; color: var(--text); line-height: 1.25; margin-bottom: 0.4rem; }
+    .modal__kicker { font-size: 0.88rem; color: var(--accent); font-weight: 500; margin-bottom: 1.25rem; }
+    .modal__desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; }
+    .modal__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  </style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
@@ -34,95 +81,94 @@
 </nav>
 
 <main id="main">
-  <div class="page">
+  <div class="page page--wide">
 
     <span class="eyebrow" data-i18n="proj.eyebrow">Work</span>
-    <h1 data-i18n="proj.title">Projects.</h1>
+    <h2 data-i18n="proj.title">Projects</h2>
     <p class="lead" style="margin-top:1rem" data-i18n="proj.lead">A selection of what I've designed, built, and shipped — dashboards, analytics platforms, and people data work.</p>
 
-    <div class="proj-list" style="margin-top:3rem">
+    <div class="pc-grid">
 
-      <article id="enterprise-it-dashboard-suite" class="proj-item reveal">
-        <div class="proj-meta">
-          <div class="proj-year">2025</div>
-          <div class="proj-cat" data-i18n="proj.card1.cat">BI Platform</div>
+      <div class="pc reveal" onclick="openModal(0)">
+        <div class="pc__body">
+          <div class="pc__cat" data-i18n="proj.card1.cat">BI Platform</div>
+          <div class="pc__title" data-i18n="proj.card1.title">Enterprise IT Dashboard Suite</div>
+          <div class="pc__kicker" data-i18n="proj.card1.kicker">Real-time visibility for CIO, IT directors & PMO · 100+ hrs saved / mo</div>
+          <div class="pc__desc" data-i18n="proj.card1.desc">Led development of enterprise Power BI dashboards and semantic data models delivering real-time IT project performance visibility to executive leadership at Williams Companies.</div>
+          <div class="pc__tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Semantic Modeling</span><span class="tag">Azure DevOps</span></div>
         </div>
-        <div>
-          <div class="proj-title" data-i18n="proj.card1.title">Enterprise IT Dashboard Suite</div>
-          <div class="proj-kicker" data-i18n="proj.card1.kicker">Real-time visibility for CIO, IT directors & PMO · 100+ hrs saved / mo</div>
-          <div class="proj-desc" data-i18n="proj.card1.desc">Led development of enterprise Power BI dashboards and semantic data models delivering real-time IT project performance visibility to executive leadership at Williams Companies. Integrated multiple source systems into a unified model, eliminating 100+ hours of manual monthly reporting and giving leadership a single source of truth for project health across the entire portfolio.</div>
-          <div class="proj-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Semantic Modeling</span><span class="tag">Azure DevOps</span></div>
-        </div>
-      </article>
+        <span class="pc__arrow">→</span>
+      </div>
 
-      <article class="proj-item reveal">
-        <div class="proj-meta">
-          <div class="proj-year">2025</div>
-          <div class="proj-cat" data-i18n="proj.card2.cat">Automation</div>
+      <div class="pc reveal" onclick="openModal(1)">
+        <div class="pc__body">
+          <div class="pc__cat" data-i18n="proj.card2.cat">Automation</div>
+          <div class="pc__title" data-i18n="proj.card2.title">Automated Reporting Pipeline</div>
+          <div class="pc__kicker" data-i18n="proj.card2.kicker">100+ hours of manual work eliminated per month</div>
+          <div class="pc__desc" data-i18n="proj.card2.desc">Designed and shipped an automated reporting solution for the Williams Companies PMO. Replaced a fully manual, multi-system reporting process with a live Power BI model.</div>
+          <div class="pc__tags"><span class="tag">Power BI</span><span class="tag">Data Integration</span><span class="tag">Process Automation</span><span class="tag">KPI Design</span></div>
         </div>
-        <div>
-          <div class="proj-title" data-i18n="proj.card2.title">Automated Reporting Pipeline</div>
-          <div class="proj-kicker" data-i18n="proj.card2.kicker">100+ hours of manual work eliminated per month</div>
-          <div class="proj-desc" data-i18n="proj.card2.desc">Designed and shipped an automated reporting solution for the Williams Companies PMO. Replaced a fully manual, multi-system reporting process with a live Power BI model connected to enterprise data sources — cutting 100+ hours of monthly labor and improving accuracy and timeliness of executive reporting.</div>
-          <div class="proj-tags"><span class="tag">Power BI</span><span class="tag">Data Integration</span><span class="tag">Process Automation</span><span class="tag">KPI Design</span></div>
-        </div>
-      </article>
+        <span class="pc__arrow">→</span>
+      </div>
 
-      <article class="proj-item reveal">
-        <div class="proj-meta">
-          <div class="proj-year">2025</div>
-          <div class="proj-cat" data-i18n="proj.card3.cat">AI-Assisted BI</div>
+      <div class="pc reveal" onclick="openModal(2)">
+        <div class="pc__body">
+          <div class="pc__cat" data-i18n="proj.card3.cat">AI-Assisted BI</div>
+          <div class="pc__title" data-i18n="proj.card3.title">AI-Accelerated BI Development Workflow</div>
+          <div class="pc__kicker" data-i18n="proj.card3.kicker">Embedded AI tooling into the enterprise BI team</div>
+          <div class="pc__desc" data-i18n="proj.card3.desc">Built and documented an AI-assisted development workflow for the BI team at Williams — using M365 Copilot, Cursor, and Perplexity to accelerate DAX authoring and SQL debugging.</div>
+          <div class="pc__tags"><span class="tag">M365 Copilot</span><span class="tag">Cursor</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Documentation</span></div>
         </div>
-        <div>
-          <div class="proj-title" data-i18n="proj.card3.title">AI-Accelerated BI Development Workflow</div>
-          <div class="proj-kicker" data-i18n="proj.card3.kicker">Embedded AI tooling into the enterprise BI team</div>
-          <div class="proj-desc" data-i18n="proj.card3.desc">Built and documented an AI-assisted development workflow for the BI team at Williams — using M365 Copilot, Cursor, and Perplexity to accelerate DAX authoring, SQL debugging, and documentation. Shared patterns and prompts with the broader team to improve collective delivery speed and consistency.</div>
-          <div class="proj-tags"><span class="tag">M365 Copilot</span><span class="tag">Cursor</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Documentation</span></div>
-        </div>
-      </article>
+        <span class="pc__arrow">→</span>
+      </div>
 
-      <article id="onboarding-framework" class="proj-item reveal">
-        <div class="proj-meta">
-          <div class="proj-year">2024</div>
-          <div class="proj-cat" data-i18n="proj.card4.cat">HR Analytics</div>
+      <div class="pc reveal" onclick="openModal(3)">
+        <div class="pc__body">
+          <div class="pc__cat" data-i18n="proj.card4.cat">HR Analytics</div>
+          <div class="pc__title" data-i18n="proj.card4.title">30/60/90-Day Onboarding Framework</div>
+          <div class="pc__kicker" data-i18n="proj.card4.kicker">New-hire engagement & early-tenure retention at CBIZ</div>
+          <div class="pc__desc" data-i18n="proj.card4.desc">Analyzed employee lifecycle data to identify gaps in new-hire onboarding at CBIZ. Designed a structured touchpoint framework to improve engagement and retention.</div>
+          <div class="pc__tags"><span class="tag">People Analytics</span><span class="tag">Workforce Data</span><span class="tag">Process Design</span><span class="tag">HR Strategy</span></div>
         </div>
-        <div>
-          <div class="proj-title" data-i18n="proj.card4.title">30/60/90-Day Onboarding Framework</div>
-          <div class="proj-kicker" data-i18n="proj.card4.kicker">New-hire engagement & early-tenure retention at CBIZ</div>
-          <div class="proj-desc" data-i18n="proj.card4.desc">Analyzed employee lifecycle data to identify gaps in new-hire onboarding at CBIZ. Designed a structured 30/60/90-day touchpoint framework to improve engagement and early-tenure retention — presented findings and recommendations to HR leadership, which informed adoption of the framework across incoming cohorts.</div>
-          <div class="proj-tags"><span class="tag">People Analytics</span><span class="tag">Workforce Data</span><span class="tag">Process Design</span><span class="tag">HR Strategy</span></div>
-        </div>
-      </article>
+        <span class="pc__arrow">→</span>
+      </div>
 
-      <article class="proj-item reveal">
-        <div class="proj-meta">
-          <div class="proj-year">2024</div>
-          <div class="proj-cat" data-i18n="proj.card5.cat">DEI & Learning</div>
+      <div class="pc reveal" onclick="openModal(4)">
+        <div class="pc__body">
+          <div class="pc__cat" data-i18n="proj.card5.cat">DEI & Learning</div>
+          <div class="pc__title" data-i18n="proj.card5.title">DEI Reporting & Learning Redesign</div>
+          <div class="pc__kicker" data-i18n="proj.card5.kicker">People data informing equity and development programs</div>
+          <div class="pc__desc" data-i18n="proj.card5.desc">Contributed to DEI initiatives and policy revision projects at CBIZ, using people data to surface insights on equity gaps and engagement.</div>
+          <div class="pc__tags"><span class="tag">DEI Reporting</span><span class="tag">Learning Design</span><span class="tag">People Data</span><span class="tag">HR Process</span></div>
         </div>
-        <div>
-          <div class="proj-title" data-i18n="proj.card5.title">DEI Reporting & Learning Redesign</div>
-          <div class="proj-kicker" data-i18n="proj.card5.kicker">People data informing equity and development programs</div>
-          <div class="proj-desc" data-i18n="proj.card5.desc">Contributed to DEI initiatives and policy revision projects at CBIZ, using people data to surface insights on equity gaps and engagement. Redesigned internal learning materials to improve usability and align with employee career-development pathways — improving consistency across onboarding cohorts.</div>
-          <div class="proj-tags"><span class="tag">DEI Reporting</span><span class="tag">Learning Design</span><span class="tag">People Data</span><span class="tag">HR Process</span></div>
-        </div>
-      </article>
+        <span class="pc__arrow">→</span>
+      </div>
 
-      <article class="proj-item reveal">
-        <div class="proj-meta">
-          <div class="proj-year">2011–15</div>
-          <div class="proj-cat" data-i18n="proj.card6.cat">Finance Ops</div>
+      <div class="pc reveal" onclick="openModal(5)">
+        <div class="pc__body">
+          <div class="pc__cat" data-i18n="proj.card6.cat">Finance Ops</div>
+          <div class="pc__title" data-i18n="proj.card6.title">Finance Automation & AR Redesign</div>
+          <div class="pc__kicker" data-i18n="proj.card6.kicker">$300K+/mo in receivables · 50% faster reporting · 60% better data accuracy</div>
+          <div class="pc__desc" data-i18n="proj.card6.desc">As Business Analyst at Sintese Comercial Hospitalar in Brazil, automated financial reporting in Excel — cutting production time by 50% with reusable templates.</div>
+          <div class="pc__tags"><span class="tag">Excel Automation</span><span class="tag">Accounts Receivable</span><span class="tag">Data Validation</span><span class="tag">KPI Design</span><span class="tag">System Migration</span></div>
         </div>
-        <div>
-          <div class="proj-title" data-i18n="proj.card6.title">Finance Automation & AR Redesign</div>
-          <div class="proj-kicker" data-i18n="proj.card6.kicker">$300K+/mo in receivables · 50% faster reporting · 60% better data accuracy</div>
-          <div class="proj-desc" data-i18n="proj.card6.desc">As Business Analyst at Sintese Comercial Hospitalar in Brazil, automated financial reporting in Excel — cutting production time by 50% with reusable templates adopted across the finance team. Managed $300K+ in monthly accounts receivable and reduced delinquency from 10% to 5% through trend analysis. Led data validation during an enterprise system migration, improving accuracy by 60%.</div>
-          <div class="proj-tags"><span class="tag">Excel Automation</span><span class="tag">Accounts Receivable</span><span class="tag">Data Validation</span><span class="tag">KPI Design</span><span class="tag">System Migration</span></div>
-        </div>
-      </article>
+        <span class="pc__arrow">→</span>
+      </div>
 
     </div>
   </div>
 </main>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal__close" onclick="closeModal()" aria-label="Close">✕</button>
+    <div class="modal__cat" id="modal-cat"></div>
+    <div class="modal__title" id="modal-title"></div>
+    <div class="modal__kicker" id="modal-kicker"></div>
+    <div class="modal__desc" id="modal-desc"></div>
+    <div class="modal__tags" id="modal-tags"></div>
+  </div>
+</div>
 
 <footer class="footer" aria-label="Site footer">
   <div class="footer__inner">
@@ -157,6 +203,39 @@
 <script>
 function toggleNav(btn){var links=document.getElementById("nav-links");var open=links.classList.toggle("nav__links--open");btn.setAttribute("aria-expanded",String(open));btn.setAttribute("aria-label",open?"Close menu":"Open menu");}
 (function(){if("IntersectionObserver" in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("reveal--visible");obs.unobserve(e.target);}});},{threshold:0.08,rootMargin:"0px 0px -24px 0px"});document.querySelectorAll(".reveal").forEach(function(el){obs.observe(el);});}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("reveal--visible");});}})();
+
+var projects = [
+  { cat:'BI Platform', title:'Enterprise IT Dashboard Suite', kicker:'Real-time visibility for CIO, IT directors & PMO · 100+ hrs saved / mo', desc:'Led development of enterprise Power BI dashboards and semantic data models delivering real-time IT project performance visibility to executive leadership at Williams Companies. Integrated multiple source systems into a unified model, eliminating 100+ hours of manual monthly reporting and giving leadership a single source of truth for project health across the entire portfolio.', tags:['Power BI','DAX','SQL','Semantic Modeling','Azure DevOps'] },
+  { cat:'Automation', title:'Automated Reporting Pipeline', kicker:'100+ hours of manual work eliminated per month', desc:'Designed and shipped an automated reporting solution for the Williams Companies PMO. Replaced a fully manual, multi-system reporting process with a live Power BI model connected to enterprise data sources — cutting 100+ hours of monthly labor and improving accuracy and timeliness of executive reporting.', tags:['Power BI','Data Integration','Process Automation','KPI Design'] },
+  { cat:'AI-Assisted BI', title:'AI-Accelerated BI Development Workflow', kicker:'Embedded AI tooling into the enterprise BI team', desc:'Built and documented an AI-assisted development workflow for the BI team at Williams — using M365 Copilot, Cursor, and Perplexity to accelerate DAX authoring, SQL debugging, and documentation. Shared patterns and prompts with the broader team to improve collective delivery speed and consistency.', tags:['M365 Copilot','Cursor','DAX','SQL','Documentation'] },
+  { cat:'HR Analytics', title:'30/60/90-Day Onboarding Framework', kicker:'New-hire engagement & early-tenure retention at CBIZ', desc:'Analyzed employee lifecycle data to identify gaps in new-hire onboarding at CBIZ. Designed a structured 30/60/90-day touchpoint framework to improve engagement and early-tenure retention — presented findings and recommendations to HR leadership, which informed adoption of the framework across incoming cohorts.', tags:['People Analytics','Workforce Data','Process Design','HR Strategy'] },
+  { cat:'DEI & Learning', title:'DEI Reporting & Learning Redesign', kicker:'People data informing equity and development programs', desc:'Contributed to DEI initiatives and policy revision projects at CBIZ, using people data to surface insights on equity gaps and engagement. Redesigned internal learning materials to improve usability and align with employee career-development pathways — improving consistency across onboarding cohorts.', tags:['DEI Reporting','Learning Design','People Data','HR Process'] },
+  { cat:'Finance Ops', title:'Finance Automation & AR Redesign', kicker:'$300K+/mo in receivables · 50% faster reporting · 60% better data accuracy', desc:'As Business Analyst at Sintese Comercial Hospitalar in Brazil, automated financial reporting in Excel — cutting production time by 50% with reusable templates adopted across the finance team. Managed $300K+ in monthly accounts receivable and reduced delinquency from 10% to 5% through trend analysis. Led data validation during an enterprise system migration, improving accuracy by 60%.', tags:['Excel Automation','Accounts Receivable','Data Validation','KPI Design','System Migration'] }
+];
+
+function openModal(i) {
+  var p = projects[i];
+  document.getElementById('modal-cat').textContent = p.cat;
+  document.getElementById('modal-title').textContent = p.title;
+  document.getElementById('modal-kicker').textContent = p.kicker;
+  document.getElementById('modal-desc').textContent = p.desc;
+  var tagsEl = document.getElementById('modal-tags');
+  tagsEl.innerHTML = p.tags.map(function(t){ return '<span class="tag">'+t+'</span>'; }).join('');
+  var overlay = document.getElementById('modal-overlay');
+  overlay.style.display = 'flex';
+  requestAnimationFrame(function(){ overlay.classList.add('active'); });
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e && e.target && e.target !== document.getElementById('modal-overlay')) return;
+  var overlay = document.getElementById('modal-overlay');
+  overlay.classList.remove('active');
+  overlay.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 </script>
 <script>
 const translations = {
@@ -167,32 +246,32 @@ const translations = {
     'nav.projects': 'Projects',
     'nav.contact': 'Contact',
     'proj.eyebrow': 'Work',
-    'proj.title': 'Projects.',
+    'proj.title': 'Projects',
     'proj.lead': 'A selection of what I\'ve designed, built, and shipped — dashboards, analytics platforms, and people data work.',
     'proj.card1.cat': 'BI Platform',
     'proj.card1.title': 'Enterprise IT Dashboard Suite',
     'proj.card1.kicker': 'Real-time visibility for CIO, IT directors & PMO · 100+ hrs saved / mo',
-    'proj.card1.desc': 'Led development of enterprise Power BI dashboards and semantic data models delivering real-time IT project performance visibility to executive leadership at Williams Companies. Integrated multiple source systems into a unified model, eliminating 100+ hours of manual monthly reporting and giving leadership a single source of truth for project health across the entire portfolio.',
+    'proj.card1.desc': 'Led development of enterprise Power BI dashboards and semantic data models delivering real-time IT project performance visibility to executive leadership at Williams Companies.',
     'proj.card2.cat': 'Automation',
     'proj.card2.title': 'Automated Reporting Pipeline',
     'proj.card2.kicker': '100+ hours of manual work eliminated per month',
-    'proj.card2.desc': 'Designed and shipped an automated reporting solution for the Williams Companies PMO. Replaced a fully manual, multi-system reporting process with a live Power BI model connected to enterprise data sources — cutting 100+ hours of monthly labor and improving accuracy and timeliness of executive reporting.',
+    'proj.card2.desc': 'Designed and shipped an automated reporting solution for the Williams Companies PMO. Replaced a fully manual, multi-system reporting process with a live Power BI model.',
     'proj.card3.cat': 'AI-Assisted BI',
     'proj.card3.title': 'AI-Accelerated BI Development Workflow',
     'proj.card3.kicker': 'Embedded AI tooling into the enterprise BI team',
-    'proj.card3.desc': 'Built and documented an AI-assisted development workflow for the BI team at Williams — using M365 Copilot, Cursor, and Perplexity to accelerate DAX authoring, SQL debugging, and documentation. Shared patterns and prompts with the broader team to improve collective delivery speed and consistency.',
+    'proj.card3.desc': 'Built and documented an AI-assisted development workflow for the BI team at Williams — using M365 Copilot, Cursor, and Perplexity to accelerate DAX authoring and SQL debugging.',
     'proj.card4.cat': 'HR Analytics',
     'proj.card4.title': '30/60/90-Day Onboarding Framework',
     'proj.card4.kicker': 'New-hire engagement & early-tenure retention at CBIZ',
-    'proj.card4.desc': 'Analyzed employee lifecycle data to identify gaps in new-hire onboarding at CBIZ. Designed a structured 30/60/90-day touchpoint framework to improve engagement and early-tenure retention — presented findings and recommendations to HR leadership, which informed adoption of the framework across incoming cohorts.',
+    'proj.card4.desc': 'Analyzed employee lifecycle data to identify gaps in new-hire onboarding at CBIZ. Designed a structured touchpoint framework to improve engagement and retention.',
     'proj.card5.cat': 'DEI & Learning',
     'proj.card5.title': 'DEI Reporting & Learning Redesign',
     'proj.card5.kicker': 'People data informing equity and development programs',
-    'proj.card5.desc': 'Contributed to DEI initiatives and policy revision projects at CBIZ, using people data to surface insights on equity gaps and engagement. Redesigned internal learning materials to improve usability and align with employee career-development pathways — improving consistency across onboarding cohorts.',
+    'proj.card5.desc': 'Contributed to DEI initiatives and policy revision projects at CBIZ, using people data to surface insights on equity gaps and engagement.',
     'proj.card6.cat': 'Finance Ops',
     'proj.card6.title': 'Finance Automation & AR Redesign',
     'proj.card6.kicker': '$300K+/mo in receivables · 50% faster reporting · 60% better data accuracy',
-    'proj.card6.desc': 'As Business Analyst at Sintese Comercial Hospitalar in Brazil, automated financial reporting in Excel — cutting production time by 50% with reusable templates adopted across the finance team. Managed $300K+ in monthly accounts receivable and reduced delinquency from 10% to 5% through trend analysis. Led data validation during an enterprise system migration, improving accuracy by 60%.',
+    'proj.card6.desc': 'As Business Analyst at Sintese Comercial Hospitalar in Brazil, automated financial reporting in Excel — cutting production time by 50% with reusable templates.',
     'footer.name': 'Cecilia Thompson',
     'footer.tagline': 'Business Intelligence & Analytics',
     'footer.copy': '© 2026 Cecilia Thompson. Views are my own.'
@@ -204,32 +283,32 @@ const translations = {
     'nav.projects': 'Projetos',
     'nav.contact': 'Contato',
     'proj.eyebrow': 'Trabalho',
-    'proj.title': 'Projetos.',
+    'proj.title': 'Projetos',
     'proj.lead': 'Uma seleção do que projetei, construí e entreguei — dashboards, plataformas de analytics e trabalho com dados de pessoas.',
     'proj.card1.cat': 'Plataforma BI',
     'proj.card1.title': 'Enterprise IT Dashboard Suite',
     'proj.card1.kicker': 'Visibilidade em tempo real para CIO, diretores de TI e PMO · 100+ hrs economizadas/mês',
-    'proj.card1.desc': 'Liderei o desenvolvimento de dashboards Power BI empresariais e modelos semânticos de dados, entregando visibilidade em tempo real do desempenho de projetos de TI para a liderança executiva na Williams Companies. Integrei múltiplos sistemas em um modelo unificado, eliminando mais de 100 horas de relatórios manuais mensais e fornecendo à liderança uma fonte única de verdade para a saúde dos projetos em todo o portfólio.',
+    'proj.card1.desc': 'Liderei o desenvolvimento de dashboards Power BI empresariais e modelos semânticos de dados, entregando visibilidade em tempo real do desempenho de projetos de TI.',
     'proj.card2.cat': 'Automação',
     'proj.card2.title': 'Pipeline de Relatórios Automatizado',
     'proj.card2.kicker': 'Mais de 100 horas de trabalho manual eliminadas por mês',
-    'proj.card2.desc': 'Projetei e entreguei uma solução de relatórios automatizada para o PMO da Williams Companies. Substituí um processo totalmente manual e multi-sistemas por um modelo Power BI conectado a fontes de dados empresariais — cortando mais de 100 horas de trabalho mensal e melhorando a precisão e pontualidade dos relatórios executivos.',
+    'proj.card2.desc': 'Projetei e entreguei uma solução de relatórios automatizada para o PMO da Williams Companies. Substituí um processo totalmente manual por um modelo Power BI.',
     'proj.card3.cat': 'BI com IA',
     'proj.card3.title': 'Workflow de BI Acelerado por IA',
     'proj.card3.kicker': 'Ferramentas de IA integradas à equipe de BI',
-    'proj.card3.desc': 'Construí e documentei um workflow de desenvolvimento assistido por IA para a equipe de BI da Williams — usando M365 Copilot, Cursor e Perplexity para acelerar a criação de DAX, depuração de SQL e documentação. Compartilhei padrões e prompts com a equipe para melhorar a velocidade e consistência coletiva.',
+    'proj.card3.desc': 'Construí e documentei um workflow de desenvolvimento assistido por IA para a equipe de BI da Williams — usando M365 Copilot, Cursor e Perplexity.',
     'proj.card4.cat': 'Analytics de RH',
     'proj.card4.title': 'Framework de Onboarding 30/60/90 Dias',
     'proj.card4.kicker': 'Engajamento de novos funcionários e retenção na CBIZ',
-    'proj.card4.desc': 'Analisei dados do ciclo de vida dos funcionários para identificar lacunas no onboarding na CBIZ. Projetei um framework estruturado de pontos de contato de 30/60/90 dias para melhorar o engajamento e a retenção — apresentei descobertas e recomendações à liderança de RH, que informaram a adoção do framework em novas turmas.',
+    'proj.card4.desc': 'Analisei dados do ciclo de vida dos funcionários para identificar lacunas no onboarding na CBIZ. Projetei um framework estruturado de pontos de contato.',
     'proj.card5.cat': 'DEI & Aprendizado',
     'proj.card5.title': 'Relatórios de DEI & Redesign de Aprendizado',
     'proj.card5.kicker': 'Dados de pessoas informando programas de equidade e desenvolvimento',
-    'proj.card5.desc': 'Contribuí para iniciativas de DEI e projetos de revisão de políticas na CBIZ, usando dados de pessoas para identificar lacunas de equidade e engajamento. Redesenhei materiais de aprendizado internos para melhorar a usabilidade e alinhar com trilhas de desenvolvimento de carreira — melhorando a consistência entre turmas de onboarding.',
+    'proj.card5.desc': 'Contribuí para iniciativas de DEI e projetos de revisão de políticas na CBIZ, usando dados de pessoas para identificar lacunas de equidade.',
     'proj.card6.cat': 'Operações Financeiras',
     'proj.card6.title': 'Automação Financeira & Redesign de Contas a Receber',
-    'proj.card6.kicker': 'R$1,5M+/mês em recebíveis · Relatórios 50% mais rápidos · Precisão de dados 60% melhor',
-    'proj.card6.desc': 'Como Analista de Negócios na Síntese Comercial Hospitalar no Brasil, automatizei relatórios financeiros em Excel — reduzindo o tempo de produção em 50% com templates reutilizáveis adotados pela equipe financeira. Gerenciei mais de R$1,5M em contas a receber mensais e reduzi a inadimplência de 10% para 5% através de análise de tendências. Liderei a validação de dados durante uma migração de sistema, melhorando a precisão em 60%.',
+    'proj.card6.kicker': 'R$1,5M+/mês em recebíveis · Relatórios 50% mais rápidos · Precisão 60% melhor',
+    'proj.card6.desc': 'Automatizei relatórios financeiros em Excel — reduzindo o tempo de produção em 50% com templates reutilizáveis adotados pela equipe financeira.',
     'footer.name': 'Cecilia Thompson',
     'footer.tagline': 'Business Intelligence & Analytics',
     'footer.copy': '© 2026 Cecilia Thompson. Todos os direitos reservados.'
